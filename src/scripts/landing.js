@@ -31,7 +31,7 @@ app.loader
 
 const setup = () => {
 	const brushTexture = app.loader.resources.bristle1.texture;
-	const brushTexture2 = app.loader.resources.bristle2.texture;
+	// const brushTexture2 = app.loader.resources.bristle2.texture;
 
 	const brush = new PIXI.Sprite(brushTexture);
 	// const brush2 = new PIXI.Sprite(brushTexture2);
@@ -53,17 +53,17 @@ const setup = () => {
 	background.width = window.innerWidth;
 	background.height = window.innerHeight;
 
-	const Mask = new PIXI.Sprite(maskTexture);
-	Mask.width = app.renderer.screen.width;
-	Mask.height = app.renderer.screen.height;
-	Mask.x = app.renderer.screen.width / 2;
-	Mask.y = app.renderer.screen.height / 2;
-	Mask.anchor.x = 0.5;
-	Mask.anchor.y = 0.5;
-	Mask.width = window.innerWidth;
-	Mask.height = window.innerHeight;
+	const mask = new PIXI.Sprite(maskTexture);
+	mask.width = app.renderer.screen.width;
+	mask.height = app.renderer.screen.height;
+	mask.x = app.renderer.screen.width / 2;
+	mask.y = app.renderer.screen.height / 2;
+	mask.anchor.x = 0.5;
+	mask.anchor.y = 0.5;
+	mask.width = window.innerWidth;
+	mask.height = window.innerHeight;
 
-	app.stage.addChild(Mask);
+	app.stage.addChild(mask);
 	app.stage.addChild(background);
 
 	const renderTexture = PIXI.RenderTexture.create(app.screen.width, app.screen.height);
@@ -89,25 +89,21 @@ const setup = () => {
 
 			brush.width += 1;
 
-			// const vx = event.data.global.x - currentVector.x;
-			// const vy = event.data.global.y - currentVector.y;
-			// vector = new Point(vx, vy);
-			// vector = vector.set(vx, vy);
+			const vx = event.data.global.x - currentVector.x;
+			const vy = event.data.global.y - currentVector.y;
+			vector = new Point(vx, vy);
+			vector = vector.set(vx, vy);
 
-			// const dotProd = vector.x;
-			// const magnitude = Math.sqrt(vector.x * vector.x + vector.y * vector.y);
-			// const angle = Math.acos(dotProd / magnitude);
-			// currentVector = currentVector.set(event.data.global.x, event.data.global.y);
-
-			// if (!bristle2Render) {
-			// 	setTimeout(() => (bristle2Render = true), 500);
-			// }
+			const dotProd = vector.x;
+			const magnitude = Math.sqrt(vector.x * vector.x + vector.y * vector.y);
+			const angle = Math.acos(dotProd / magnitude);
+			currentVector = currentVector.set(event.data.global.x, event.data.global.y);
 
 			app.renderer.render(
 				brush,
 				{
 					renderTexture,
-					transform: new PIXI.Matrix(),
+					transform: new PIXI.Matrix().rotate(angle),
 					clear: false
 				},
 				false,
