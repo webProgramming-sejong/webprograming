@@ -16,14 +16,18 @@
 
 ## Asset 관련
 
-### asset 저장은, assets 폴더 안에 넣기, (확장자 별로 정리하면 좋음)
+### 1.asset 저장
 
-### asset , javascript에서 사용방법
+#### assets 폴더 안에 넣기, (확장자 별로 정리하면 좋음)
+
+### 2. asset , javascript에서 사용방법
 
 #### ex) /src/scripts/landing.js 에서 /assets/jpeg/mask.jpeg을 쓰고싶다
 
 ```
-    <!-- const WRONG_URL =  '../../assets/jpeg/mask.jpeg'; -->
+
+    //이렇게 써도 되긴한데, 비효율 적임, 아래 코드 권장
+    //const WRONG_URL =  '../../assets/jpeg/mask.jpeg';
 
     // 라우트 설정을  (root)/assets <- 로 설정해서, 그냥 /jpeg.mask.jpeg 해도 됨
     const RIGHT_URL = '/jpeg/mask.jpeg'
