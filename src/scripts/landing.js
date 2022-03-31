@@ -103,7 +103,7 @@ const setup = () => {
 				brush,
 				{
 					renderTexture,
-					transform: new PIXI.Matrix().rotate(angle),
+					transform: new PIXI.Matrix(),
 					clear: false
 				},
 				false,
