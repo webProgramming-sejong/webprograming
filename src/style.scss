@@ -14,6 +14,18 @@ body {
 	overflow: hidden;
 }
 
+.logo_image {
+	background: url('/assets/png/logoTransC.png');
+	background-size: cover;
+	width: 300px;
+	height: 300px;
+	z-index: 100;
+	position: absolute;
+	left: calc(50% - 150px);
+	top: -10px;
+	opacity: 0;
+	animation: untransparent 1s linear 4s forwards;
+}
 .landing {
 	position: relative;
 	width: 100vw;
