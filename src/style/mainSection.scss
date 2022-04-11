@@ -1,3 +1,5 @@
+@import './keyframes.scss';
+
 .main-section {
 	height: 300vh;
 	background-color: black;
@@ -12,23 +14,4 @@
 .load {
 	animation: load-main-section 1.5s cubic-bezier(0.17, 0.76, 0.85, -0.59) forwards,
 		repaint-section 1s linear 1.5s forwards;
-}
-
-@keyframes load-main-section {
-	0% {
-		transform: translateY(100vh);
-		background-color: black;
-	}
-	100% {
-		transform: translateY(0px);
-	}
-}
-
-@keyframes repaint-section {
-	0% {
-		background-color: black;
-	}
-	100% {
-		background-color: white;
-	}
 }

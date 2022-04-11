@@ -2,6 +2,10 @@ import * as PIXI from 'pixi.js';
 import { Point } from '@pixi/math';
 
 window.onload = () => {
+	setTimeout(() => init(), 3000);
+};
+
+const init = () => {
 	const canvas = document.getElementById('canvas');
 
 	const circleSvg = document.getElementsByClassName('helper_circle')[0];
@@ -98,7 +102,6 @@ window.onload = () => {
 			if (dragging) {
 				brush.position.copyFrom(event.data.global);
 
-				brush.width += 0.1;
 				const originPos = {
 					x: event.data.global.x - window.innerWidth / 2,
 					y: -(event.data.global.y - window.innerHeight / 2)
@@ -152,21 +155,23 @@ window.onload = () => {
 			) {
 				isHit = true;
 				// window.removeEventListener('mousemove' , exitLanding)
-				const target = document.head.children[4];
+
+				const scripts = document.getElementsByTagName('script');
 
 				const xhr = new XMLHttpRequest();
-				const section = document.getElementsByClassName('landing')[0];
-
 				document.body.children[2].removeChild(helperPath);
-				console.dir(document.body);
+
+				const newScript = document.createElement('script');
+				newScript.src = '/section.bundle.js';
 				xhr.onload = () => {
 					if (xhr.status === 200) {
 						document.body.innerHTML += xhr.responseText;
 						document.body.children[3].classList.add('load');
 						document.body.children[2].remove();
-						document.head.children[4].remove();
+						// scripts[2].parentNode.removeChild(scripts[2]);
 
-						console.dir(document);
+						scripts[1].parentNode.removeChild(scripts[1]);
+						document.body.appendChild(newScript);
 					} else {
 						console.warn('erroor');
 					}
@@ -179,17 +184,14 @@ window.onload = () => {
 		function pointerDown(event, x, y) {
 			dragging = true;
 			startErase = false;
-			positionHistory.start.x = event.data.global.x ? event.data.global.x : x;
-			positionHistory.start.y = event.data.global.y ? event.data.global.y : y;
+			positionHistory.start.x = event ? event.data.global.x : x;
+			positionHistory.start.y = event ? event.data.global.y : y;
 			helperPath.classList.add('show_up');
-
-			pointerMove(event);
 		}
 
 		function pointerUp(event) {
 			dragging = false;
 			brush.width = brushWidth;
-			console.dir(app);
 			positionHistory.end.x = event.data.global.x;
 			positionHistory.end.y = event.data.global.y;
 
@@ -203,14 +205,14 @@ window.onload = () => {
 			pointerDown(null, e.x, e.y);
 		});
 
-		window.addEventListener('resize', () => {
-			screenSize.width = window.innerWidth;
-			screenSize.height = window.innerHeight;
+		// window.addEventListener('resize', () => {
+		// 	screenSize.width = window.innerWidth;
+		// 	screenSize.height = window.innerHeight;
 
-			app.renderer.resize(window.innerWidth, window.innerHeight);
-			app.renderer.stage.width = window.innerWidth;
-			app.renderer.stage.height = window.innerHeight;
-		});
+		// 	app.renderer.resize(window.innerWidth, window.innerHeight);
+		// 	app.renderer.stage.width = window.innerWidth;
+		// 	app.renderer.stage.height = window.innerHeight;
+		// });
 	};
 
 	const getMagnitude = (x, y) => {
@@ -233,7 +235,6 @@ window.onload = () => {
 		y: window.innerHeight / 2
 	};
 	circleSvg.addEventListener('click', (_) => {
-		console.dir(document.body);
 		helperPath.classList.add('show_up');
 
 		document.body.children[2].children[2].remove();

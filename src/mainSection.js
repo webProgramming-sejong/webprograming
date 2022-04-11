@@ -1,2 +1,2 @@
 import './style/mainSection.scss';
-import(/* webpackPrefetch: true */ './test');
+import(/* webpackPrefetch: true */ './scripts/progressBar');
