@@ -3,9 +3,41 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>hi</title>
+		<title>France pour tous</title>
 	</head>
-	<body></body>
-</html>
 
-<!-- <%= %> = webpack access to html -->
+	<body>
+		<svg class='title' width='100%' height='140' viewBox="0 0 600 150" style=" z-index : 200;">
+		
+			<g>
+				<text class='svg-text svg-france' x='250' y='75' fill='#000000' font-size='60'>France</text>
+				
+			</g>
+			<g>
+				<text class='svg-text svg-pour' x='250' y='75' fill='#000000' font-size='60'>Pour</text>
+			</g>
+			<g>
+				<text class='svg-text svg-tous' x='250' y='75' fill='#000000' font-size='60' >Tous</text>
+			</g>
+		</svg>
+		<section class="landing">
+			
+			<canvas id='canvas'></canvas>
+			<svg width="55.526315921561604" height="47.21052643136636" class='abs helper_arrow'><path fill="none" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" marker-start="" marker-mid="" marker-end="" id="svg_2" d="M26.239223409748888,35.66507789395291 L32.97757587406437,28.882781138242763 L19.949300253817285,28.882781138242763 L6.921053157061294,28.882781138242763 L6.921053157061294,24.684218183029515 L6.921053157061294,20.48565093604566 L19.79983998100107,20.48565093604566 C26.883162750944848,20.48565093604566 32.678616821714286,20.272847730454743 32.678616821714286,20.012753493032335 C32.678616821714286,19.75266497797145 29.858768203734257,16.700630221899388 26.412294007345963,13.230458167911536 L20.145951226517695,6.921053132856173 L25.937966789707787,6.921053132856173 L31.729960960273104,6.921053132856173 L40.575647935654274,15.811141949355658 L49.42133063251015,24.7012264740857 L40.55867930718807,33.57430127716839 L31.696030834219755,42.44737608025298 L25.598447324390122,42.44737608025298 L19.500849552814486,42.44737608025298 L26.239220557398085,35.66507646336163 L26.239223409748888,35.66507789395291 z" style="color: rgb(0, 0, 0);" class="" transform="rotate(90.7801284790039 28.171192169189457,24.68422508239746) "/></svg>
+			<svg class=" abs helper_circle"
+				width='204' height ='204'
+				viewBox='0 0 204 204'
+				style=" z-index : 200;"
+				clickable = false
+			>
+			<circle cx="102" cy="100" r="100" fill="none" stroke="#022291" stroke-width="4" />
+			<text x = '80' y = '105' fill='#000000' font-size='20'>Click</text>
+			</svg>
+			<svg width="628" height="325" class='abs helper_path'>
+				 <path d="m594.59846,0.00001" stroke="#000" stroke-width='3'/>
+				 <path class='path' d="m-0.76921,317.68327c581.52191,-66.92117 596.90609,-234.60871 596.34254,-235.17872" stroke="#000" stroke-width='3'/>
+				 <path d="m618.31484,76.90342l-13.71614,-13.20733l13.71365,-13.20733l-7.05003,-6.7933l-13.71614,13.20733l-13.71614,-13.20733l-7.05003,6.7933l13.71365,13.20733l-13.71614,13.20733l7.05501,6.7909l13.71365,-13.20733l13.71365,13.20733z" stroke-width="3" stroke="#000" fill='#fff'/>
+			   </svg>
+		</div>
+	</body>
+</html>

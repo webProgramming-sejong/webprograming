@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
 const htmlConfig = {
 	// title: 'Just a Demo',
@@ -10,13 +11,21 @@ const htmlConfig = {
 	minify: true
 };
 
+const partialConfig = {
+	filename: 'partial.html',
+	chunks: ['subpage'],
+	template: path.resolve(__dirname, '../src/partial.html'),
+	minify: true
+};
+
 module.exports = {
 	entry: {
-		main: path.resolve(__dirname, '../src/index.js')
+		main: path.resolve(__dirname, '../src/index.js'),
+		section: path.resolve(__dirname, '../src/mainSection.js')
 	},
 	output: {
 		path: path.resolve(__dirname, '../dist'),
-		filename: '[name].[contenthash].js',
+		filename: '[name].bundle.js',
 		clean: true,
 		assetModuleFilename: '[name][ext]',
 		publicPath: '/'
@@ -30,6 +39,8 @@ module.exports = {
 			]
 		}),
 		new HtmlWebpackPlugin(htmlConfig),
+		new HtmlWebpackPlugin(partialConfig),
+
 		new MiniCSSExtractPlugin()
 	],
 	module: {

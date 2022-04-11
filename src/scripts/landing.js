@@ -1,67 +1,73 @@
 import * as PIXI from 'pixi.js';
 import { Point } from '@pixi/math';
 
-let currentVector = new Point(1, 0);
+const canvas = document.getElementById('canvas')
 
-currentVector = currentVector.set(1, 0);
+const circleSvg = document.getElementsByClassName('helper_circle')[0];
+const helperPath = document.getElementsByClassName('helper_path')[0];
+
+
+
+
+
 const screenSize = {
 	width: window.innerWidth,
 	height: window.innerHeight
 };
-let brushWidth = (window.innerHeight / window.innerWidth) * 150;
-let brushHeight = (window.innerHeight / window.innerWidth) * 200;
+let brushWidth = (window.innerHeight / window.innerWidth) * 200;
+let brushHeight = (window.innerHeight / window.innerWidth) * 250;
 
+const unCover = new PIXI.Graphics();
+unCover.beginFill(0x000000);
+unCover.drawCircle(0, 0, 100);
+unCover.endFill();
 const app = new PIXI.Application({
-	width: window.innerWidth,
-	height: window.innerHeight,
+	width: window.innerWidth*2 / 3,
+	height: window.innerHeight ,
 	resolution: window.devicePixelRatio,
-	autoDensity: true
+	autoDensity: true,
+	view: canvas
 });
 
-document.body.appendChild(app.view);
+// document.body.appendChild(app.view);
 
 app.loader
-	.add('background', '/jpeg/mask.jpeg')
-	.add('mask', '/png/effel-gray.png')
+	.add('background', '/jpeg/city.jpeg')
 	.add('bristle1', '/png/brush6.png')
 	.add('bristle2', '/png/bristle2.png')
 	.load(() => {
 		setup();
 	});
 
+
+
 const setup = () => {
 	const brushTexture = app.loader.resources.bristle1.texture;
-	// const brushTexture2 = app.loader.resources.bristle2.texture;
 
 	const brush = new PIXI.Sprite(brushTexture);
-	// const brush2 = new PIXI.Sprite(brushTexture2);
 
 	brush.width = brushWidth;
 	brush.height = brushHeight;
-	brush.anchor.set(0.5, 0.5);
-
-	// brush2.width = brushWidth;
-	// brush2.height = brushHeight;
+	brush.anchor.set(0.5,0.5);
 
 	const backgroundTexture = app.loader.resources.background.texture;
-	const maskTexture = app.loader.resources.mask.texture;
+
 	const background = new PIXI.Sprite(backgroundTexture);
+	// background.alpha = 0;
 	background.x = app.renderer.screen.width / 2;
 	background.y = app.renderer.screen.height / 2;
 	background.anchor.x = 0.5;
 	background.anchor.y = 0.5;
-	background.width = window.innerWidth;
-	background.height = window.innerHeight;
 
-	const mask = new PIXI.Sprite(maskTexture);
+
+	const mask = new PIXI.Sprite(PIXI.Texture.WHITE);
 	mask.width = app.renderer.screen.width;
 	mask.height = app.renderer.screen.height;
 	mask.x = app.renderer.screen.width / 2;
 	mask.y = app.renderer.screen.height / 2;
 	mask.anchor.x = 0.5;
 	mask.anchor.y = 0.5;
-	mask.width = window.innerWidth;
-	mask.height = window.innerHeight;
+
 
 	app.stage.addChild(mask);
 	app.stage.addChild(background);
@@ -80,30 +86,55 @@ const setup = () => {
 	app.stage.on('pointermove', pointerMove);
 
 	let dragging = false;
-	let bristle2Render = false;
+	let startErase = false;
 
+	const originVector = new Point(1, 0);
 	let vector;
+
+
+
+	const positionHistory = {
+		start : {
+			x : null,
+			y : null,
+		},
+		end : {
+			x : null,
+			y : null
+		}
+	}
 	function pointerMove(event) {
 		if (dragging) {
 			brush.position.copyFrom(event.data.global);
 
-			brush.width += 1;
+			brush.width += 0.1;
+			const originPos = {
+				x : event.data.global.x - window.innerWidth / 2,
+				y : -(event.data.global.y - window.innerHeight / 2)
+			}
 
-			const vx = event.data.global.x - currentVector.x;
-			const vy = event.data.global.y - currentVector.y;
+	
+			
+			const vx = originPos.x;
+			const vy = originPos.y;
+			
 			vector = new Point(vx, vy);
-			vector = vector.set(vx, vy);
+			vector = normalizeVector(vector);
 
-			const dotProd = vector.x;
-			const magnitude = Math.sqrt(vector.x * vector.x + vector.y * vector.y);
-			const angle = Math.acos(dotProd / magnitude);
-			currentVector = currentVector.set(event.data.global.x, event.data.global.y);
+			const dotProd = (vector.x * originVector.x) + (vector.y * originVector.y);
+	
+			const angle = Math.acos(dotProd);
+			const rotationMatrix = new PIXI.Matrix()
+			rotationMatrix.rotate(angle);
+			brush.rotation = angle;
 
+
+
+			
 			app.renderer.render(
 				brush,
 				{
 					renderTexture,
-					transform: new PIXI.Matrix(),
 					clear: false
 				},
 				false,
@@ -111,28 +142,87 @@ const setup = () => {
 				false
 			);
 
-			// if (bristle2Render) {
-			// 	brush2.position.copyFrom(event.data.global);
-			// 	app.renderer.render(brush2, renderTexture, false, null, false);
-			// }
+		}
+		else{
+			if(startErase){
+				unCover.position.copyFrom(event.data.global);
 
-			// if (brush.width === 100) {
-			// 	dragging = false;
-			// 	brushWidth = 0;
-			// }
+				app.renderer.render(
+					unCover,
+					{
+						renderTexture,
+						clear: false
+					},
+					false,
+					null,
+					false
+				);
+			}
+		}
+		if(endPos.x -50 <= event.data.global.x && (endPos.y + 50 >= event.data.global.y || endPos.y -50 <= event.data.global.y) && !isHit && dragging){
+			isHit = true;
+			// window.removeEventListener('mousemove' , exitLanding)
+			const target = document.head.childNodes[3];
+			
+
+
+	
+			const xhr = new XMLHttpRequest();
+			const section = document.getElementsByClassName('landing')[0];
+
+		
+			document.body.children[1].removeChild(helperPath)
+			// document.head.removeChild(target);
+		
+	
+			xhr.onload = () => {
+	
+				if(xhr.status === 200){
+					document.body.innerHTML += xhr.responseText;
+					document.body.children[2].classList.add('load')
+				}else{
+					console.warn('erroor');
+				}
+			}
+			xhr.open('get' , './partial.html');
+			xhr.send();
+	
 		}
 	}
 
-	function pointerDown(event) {
+	function pointerDown(event , x ,y) {
 		dragging = true;
+		startErase = false;
+		positionHistory.start.x = event.data.global.x ? event.data.global.x : x;
+		positionHistory.start.y = event.data.global.y ? event.data.global.y: y;
+		helperPath.classList.add('show_up')
+		
 		pointerMove(event);
 	}
 
 	function pointerUp(event) {
+
 		dragging = false;
-		bristle2Render = false;
 		brush.width = brushWidth;
+		console.dir(app)
+		positionHistory.end.x = event.data.global.x;
+		positionHistory.end.y = event.data.global.y;
+
+
+		positionHistory.start.x = null;
+		positionHistory.start.y = null;
+		positionHistory.end.x = null;
+		positionHistory.end.y = null;
+		
+	
 	}
+
+window.addEventListener('click' , (e) => {
+	
+	pointerDown(null , e.x ,e.y);
+})
+
+
 
 	window.addEventListener('resize', () => {
 		screenSize.width = window.innerWidth;
@@ -142,4 +232,34 @@ const setup = () => {
 		app.renderer.stage.width = window.innerWidth;
 		app.renderer.stage.height = window.innerHeight;
 	});
+
 };
+
+
+
+const getMagnitude = (x , y) => {
+	return Math.sqrt(x*x + y*y);
+}
+
+const normalizeVector = (vector) =>{
+	const magnitude = getMagnitude(vector.x , vector.y);
+	vector.x /= magnitude;
+	vector.y /= magnitude;
+
+	return vector;
+}
+
+
+//// terminator
+
+let isHit = false;
+const endPos = {
+	x : window.innerWidth /6 + window.innerWidth*1/2,
+	y : window.innerHeight / 2
+}
+circleSvg.addEventListener('click' , _ => {
+	
+	helperPath.classList.add('show_up');
+	document.body.children[1].children[2].remove()
+	document.body.children[1].children[1].remove()
+})
