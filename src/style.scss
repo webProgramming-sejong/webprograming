@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	font-family: 'Inter', sans-serif;
 }
 
 html {
@@ -15,14 +16,14 @@ body {
 }
 
 .logo_image {
-	background: url('/assets/png/logoTransC.png');
-	background-size: cover;
+	background: url('/assets/png/logo.png') no-repeat;
+	background-size: contain;
 	width: 300px;
-	height: 300px;
+	height: 150px;
 	z-index: 100;
 	position: absolute;
 	left: calc(50% - 150px);
-	top: -10px;
+	top: 160px;
 	opacity: 0;
 	animation: untransparent 1s linear 4s forwards;
 }
@@ -61,13 +62,13 @@ body {
 }
 
 .svg-tous {
-	transform: translateX(200px);
+	transform: translateX(210px);
 	animation: letter-adjustment-right 1s ease-in-out 1s forwards;
 	left: 30px;
 }
 
 .svg-france {
-	transform: translateX(-300px);
+	transform: translateX(-320px);
 	animation: letter-adjustment-left 1s ease-in-out 1s forwards;
 	right: 30px;
 }
@@ -111,9 +112,7 @@ body {
 }
 .helper_path .path {
 	fill: none;
-
 	stroke-dasharray: 100;
-	// stroke-dashoffset: 1000;
 	animation: helper-path-animation 5s linear infinite;
 }
 .helper_arrow {
@@ -229,11 +228,11 @@ body {
 @keyframes letter-adjustment-right {
 	0% {
 		letter-spacing: 20px;
-		transform: translateX(200px);
+		transform: translateX(210px);
 	}
 	100% {
 		letter-spacing: 5px;
-		transform: translateX(155px);
+		transform: translateX(165px);
 	}
 }
 @keyframes letter-adjustment-mid {
@@ -247,11 +246,11 @@ body {
 @keyframes letter-adjustment-left {
 	0% {
 		letter-spacing: 20px;
-		transform: translateX(-300px);
+		transform: translateX(-320px);
 	}
 	100% {
 		letter-spacing: 5px;
-		transform: translateX(-220px);
+		transform: translateX(-240px);
 	}
 }
 

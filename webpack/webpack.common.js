@@ -11,10 +11,10 @@ const htmlConfig = {
 	minify: true
 };
 
-const partialConfig = {
-	filename: 'partial.html',
+const mainSectionConfig = {
+	filename: 'mainSection.html',
 	chunks: ['subpage'],
-	template: path.resolve(__dirname, '../src/partial.html'),
+	template: path.resolve(__dirname, '../src/mainSection.html'),
 	minify: true
 };
 
@@ -39,7 +39,7 @@ module.exports = {
 			]
 		}),
 		new HtmlWebpackPlugin(htmlConfig),
-		new HtmlWebpackPlugin(partialConfig),
+		new HtmlWebpackPlugin(mainSectionConfig),
 
 		new MiniCSSExtractPlugin()
 	],
