@@ -1,0 +1,80 @@
+*{
+  font-family: 'Inter', sans-serif;
+}
+.element1 {
+  width: 1400px;
+  height: 600px;
+  background: lightyellow;
+  box-sizing: border-box;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  clear: both;
+}
+.picture1 {
+  width: 700px;
+  height: 600px;
+  float: left;
+  margin-right: 50px;
+}
+.element1 h1 {
+  font-size: 70pt;
+}
+.element1 p {
+  font-size: 15pt;
+  line-height: 3;
+}
+.element2 {
+  width: 1400px;
+  height: 600px;
+  background: lightcyan;
+  box-sizing: border-box;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  clear: both;
+}
+.picture2 {
+  width: 700px;
+  height: 600px;
+  float: right;
+  margin-left: 30px;
+}
+.element2 h1 {
+  font-size: 70pt;
+  margin-left: 40px;
+}
+.element2 p {
+  font-size: 15pt;
+  line-height: 3;
+  margin-left: 40px;
+}
+.element1 a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+.element1 a:before {
+  content: "";
+  position: absolute;
+  background-color: orange;
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  transition: 0.7s;
+}
+.element1 a:hover:before {
+  width: 100%;
+}
+.element1 a:after {
+  content: "";
+  position: absolute;
+  background-color: orange;
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  transition: 0.7s;
+}
+.element1 a:hover:before {
+  width: 100%;
+}
