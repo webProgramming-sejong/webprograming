@@ -15,13 +15,12 @@
   width: 700px;
   height: 600px;
   float: left;
-  margin-right: 50px;
 }
 .element1 h1 {
-  font-size: 70pt;
+  font-size: 50pt;
 }
 .element1 p {
-  font-size: 15pt;
+  font-size: 20pt;
   line-height: 3;
 }
 .element2 {
@@ -41,20 +40,19 @@
   margin-left: 30px;
 }
 .element2 h1 {
-  font-size: 70pt;
-  margin-left: 40px;
+  font-size: 50pt;
 }
 .element2 p {
-  font-size: 15pt;
+  font-size: 20pt;
   line-height: 3;
   margin-left: 40px;
 }
-.element1 a {
+a {
   text-decoration: none;
   color: black;
   position: relative;
 }
-.element1 a:before {
+a:before {
   content: "";
   position: absolute;
   background-color: orange;
@@ -63,10 +61,10 @@
   bottom: 0;
   transition: 0.7s;
 }
-.element1 a:hover:before {
+a:hover:before {
   width: 100%;
 }
-.element1 a:after {
+a:after {
   content: "";
   position: absolute;
   background-color: orange;
@@ -75,6 +73,9 @@
   bottom: 0;
   transition: 0.7s;
 }
-.element1 a:hover:before {
+a:hover:before {
   width: 100%;
+}
+.text {
+  text-align: center;
 }
