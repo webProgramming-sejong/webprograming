@@ -10,6 +10,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="login.css" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Declaration for font, fabicon, css connection -->
     <style>
         input[id="chk"] {
         position: relative;
@@ -18,31 +19,33 @@
     </style>
 </head>
     <body>
-
-        
-        <div class="signupbox">
+        <div class="signinbox"> 
             <h1>L O G I N</h1>
-            <br>
+            <!-- Top Large Login Letter -->
+            <br> 
             <form action="">
                 <div class="input-container">
                     <input type="text" name="id" class="input"/>
                     <label for="" style="color: rgb(255, 255, 255);">Id or Email</label>
                     <span>Id or Email</span>
                 </div>
+                <!-- Enter ID or email box -->
                 <div class="input-container">
                     <input type="password" name="Password" class="input"/>
                     <label for="" style="color: rgb(255, 255, 255);">Password</label>
                     <span>Password</span>
                 </div>
-                
+                <!-- Password text box -->
                 <label for="chk"><input type="checkbox" id="chk" name="chk"> Remember-me</label>
+                <!-- Checkbox to save login information when you want to remember it -->
                 <input type="submit" name="submit" value="L o g i n" />
                 <a href="https://apple.com" target="_blank">Sign Up</a>
+                <!-- Address to the page where you sign up when you don't have an ID -->
             </form>
         </div>
 
-
-        <script type="text/javascript">
+        <!-- JavaScript code that goes up to the border when click in the ID or password input box -->
+        <script type="text/javascript"> 
             const inputs = document.querySelectorAll(".input");
 
             function focusFunc() {

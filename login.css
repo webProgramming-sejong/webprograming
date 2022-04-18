@@ -7,9 +7,8 @@ body {
   background: rgb(88, 194, 255);
   background-repeat:no-repeat;
   background-size: 2000px 1000px;
-  /* 전체 */
+  /* body */
 }
-
 .input-container{
   position: relative;
 }
@@ -66,9 +65,10 @@ body {
   width: 50%;
   opacity: 1;
 }
+/* In this css, the letters are moved by adjusting them through 
+z-index by distinguishing between span and non-span. */
 
-
-.signupbox {
+.signinbox {
   width: 360px;
   height: 550;
   background-color: rgb(0, 162, 255);
@@ -81,30 +81,30 @@ body {
   box-sizing: border-box;
   padding: 50px 30px;
   box-shadow: 1px 1px 5px 1px #020408;
-  /* 로그인 박스 */
+  /* Login Box */
 }
 h1 {
   margin: 0;
   padding: 0 0 20px;
   text-align: center;
   font-size: 26px;
-  /* login 글자 */
+  /* login letter */
 }
-.signupbox p,
+.signinbox p,
 label {
   margin: 0;
   padding: 0;
   font-weight: bold;
   font-size: 13px;
   text-align: left;
-  /* 체크박스 글씨 */
+  /* Check box letter */
 }
-.signupbox input {
+.signinbox input {
   width: 100%;
   margin-bottom: 10px;
-  /* 체크박스 주변 크기 */
+  /* Size around check box */
 }
-.signupbox input[type="text"],
+.signinbox input[type="text"],
 [type="password"]
 {
   position: relative;
@@ -117,16 +117,16 @@ label {
   border-radius: 10px;
   text-align: left;
   padding-left: 10px;
-  /* 아이디 패스워드 입력란 */
+  /* ID password text box */
 }
-.signupbox input[type="checkbox"] {
+.signinbox input[type="checkbox"] {
   width: 10px;
   height: 20px;
   color: rgb(255, 255, 255);
   text-align: right;
-  /* 체크박스 */
+  /* check box */
 }
-.signupbox input[type="submit"] {
+.signinbox input[type="submit"] {
   border: none;
   outline: none;
   height: 40px;
@@ -136,9 +136,9 @@ label {
   color: rgb(0, 0, 0);
   font-size: 18px;
   border-radius: 20px;
-  /* sign in 박스 */
+  /* sign in click box */
 }
-.signupbox input[type="submit"]:hover {
+.signinbox input[type="submit"]:hover {
   cursor: pointer;
   background: #dea700;
   color: #000;
@@ -146,8 +146,8 @@ label {
   /* sign in hover */
 }
 
-/* 회원가입 버튼 */
-.signupbox a {
+/* sign up button */
+.signinbox a {
   padding-top: 20px;
   text-decoration: none;
   font-size: 12px;
@@ -156,6 +156,6 @@ label {
   text-align: center;
   display: block;
 }
-.signupbox a:hover {
+.signinbox a:hover {
   color: #ec0d0d;
 }
