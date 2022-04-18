@@ -1,81 +1,101 @@
 *{
+   /* 전체폰트적용 */
+   /* All fonts applied */
   font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  /* 중앙정렬 */
+  /* Center alignment */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.parent-elem{
+  /* 모든 행 크기 설정, 수직방향 정렬 설정 */
+  /* Set All Row Sizes, Set Vertical Alignment */
+  width: 1400px;
+  height: 600px;
+  display: flex;
+  align-items: center;
 }
 .element1 {
-  width: 1400px;
-  height: 600px;
+  /* 홀수 행 백그라운드 컬러 설정 */
+  /* Set Odd Row Background Color */
   background: lightyellow;
-  box-sizing: border-box;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-  clear: both;
-}
-.picture1 {
-  width: 700px;
-  height: 600px;
-  float: left;
-}
-.element1 h1 {
-  font-size: 50pt;
-}
-.element1 p {
-  font-size: 20pt;
-  line-height: 3;
 }
 .element2 {
-  width: 1400px;
-  height: 600px;
+/* Set Even Row Background Color */
   background: lightcyan;
-  box-sizing: border-box;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-  clear: both;
 }
-.picture2 {
-  width: 700px;
-  height: 600px;
-  float: right;
-  margin-left: 30px;
+
+.picture {
+  /* 사진 크기 설정, 블러 효과 */
+  /* Set picture size, blur effect */
+  width: 50%;
+  height: 100%;
+  filter: blur(3px);
+  transition: filter ease 0.3s;
 }
-.element2 h1 {
-  font-size: 50pt;
+
+.picture:hover{
+/* 블러 효과 제거 */
+/* Remove blur effect */
+  filter: blur(0px);
 }
-.element2 p {
-  font-size: 20pt;
-  line-height: 3;
-  margin-left: 40px;
-}
-a {
-  text-decoration: none;
-  color: black;
-  position: relative;
-}
-a:before {
-  content: "";
-  position: absolute;
-  background-color: orange;
-  height: 2px;
-  width: 0;
-  bottom: 0;
-  transition: 0.7s;
-}
-a:hover:before {
+
+.text{
+  /* 텍스트 중앙 정렬 */
+  /* Center text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* 텍스트 크기 설정 */
+  /* Set text size */
   width: 100%;
-}
-a:after {
-  content: "";
-  position: absolute;
-  background-color: orange;
-  height: 2px;
-  width: 0;
-  bottom: 0;
-  transition: 0.7s;
-}
-a:hover:before {
-  width: 100%;
-}
-.text {
+  height: 100%;
+
   text-align: center;
+}
+
+a {
+  /* 밑줄제거 */
+/* Remove Underline */
+  text-decoration: none;
+  color :black;
+ /* 크기 설정 */
+ /* Size Settings */
+  width: 50%;
+  height: 100%;
+}
+
+/* 방문 후에도 텍스트 색 유지 */
+/* Maintain text color after visit */
+a:visited{
+  color :black;
+}
+
+.text h1{
+  /* 모든 h1 폰트 사이즈 설정 */
+  /* Set all h1 font sizes */
+  font-size : 55px;
+
+  /* 간격 설정 */
+  /* Set spacing */
+  margin-bottom : 40px;
+}
+.text p{
+  /* 모든 p 폰트 사이즈 설정 */
+  /* Set all p font sizes */
+  font-size: 22px;
+
+  /* 간격 설정 */
+  /* Set spacing */
+  line-height: 40px;
 }
