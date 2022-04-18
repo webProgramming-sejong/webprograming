@@ -4,55 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/980bde2d5b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/style.css" type="text/css">
     <title>Detail</title>
 </head>
 <body>
     <!--들어가야하는 내용(장소이름,등록날짜,사진,위치,설명,댓글,좋아요)-->
     <div class="detail">
         <div class="header">
-            <div class="titleWrap">
-                <h1 class="title">루브르 박물관(Musée du Louvre)</h1>
-                <div class="infoWrap">
-                    <span class="author">관리자</span>
-                    <span class="bar"></span>
-                    <span class="time">20.Oct.2022</span>
-                </div>
-            </div>
-        </div>
-        <div class="postWrap">
-            <div class="post">
-                <h1>루브르 박물관</h1>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Louvre_Museum_Wikimedia_Commons.jpg/2880px-Louvre_Museum_Wikimedia_Commons.jpg"/>
-                <p>루브르 박물관(프랑스어: Musée du Louvre)은 프랑스 파리의 중심가인 리볼리가에 있는 국립 박물관이다. 소장품의 수와 질 면에서 메트로폴리탄 미술관, 대영박물관과 함께 세계적으로 손꼽히는 박물관이다. 현재의 건물은 루브르 궁전을 개조한 것으로, 파리의 세느강 주변을 포함하여 세계유산으로 지정되어 있다. 루브르 박물관 앞의 유리 피라미드 조형물인 루브르 피라미드는 근대에 건설된 것으로 한때 어울리지 않다는 평이 많았으나 현재는 루브르를 대표하는 조형물이 되었다. 프랑스어로 뮈제 뒤 루브르, 그랑 루브르, 또는 단순히 루브르라고도 불린다.</p>
-                <p>루브르 박물관은 루브르 궁전 내부에 위치해 있다. 루브르 궁전은 12세기 후반 필립 2세의 명으로 착공되었는데, 그 당시만 해도 궁이 아닌 요새였다. 아직도 당시의 요새 잔재들을 볼 수 있다. 이 요새가 루브르 궁이 되기까지 수차례에 걸친 건물 확장 공사가 이루어졌다. 1672년 루이 14세가 베르사유 궁전에 거주하기로 결정하고 루브르를 왕실의 수집품을 전시하기 위한 장소로 쓰도록 했다.</p>
-            </div>
-            <div class="recommendWrap">
-                <div class="recommendBtn">
-                    <span class="recommendIcon"></span>
-                    <span class="recommendNum">62</span>
-                </div>
-            </div>
-        </div>
-        <div class="commentWrap">
-            <form action="">
-                <textarea name="comment" class="commentInput" cols="30" rows="5"></textarea>
-                <input type="submit" value="등록"/>
-            </form>
-            <div class="comments">
-                <div class="comment">
-                    <div class="info">
-                        <span class="name">name</span>
-                        <span class="time">22.03.31</span>
-                    </div>
-                    <div class="message">
-                        <p>안녕하세요 댓글입니다.</p>
+            <div class="textArea">
+                <div class="titleWrap">
+                    <span class="tag">museum</span>
+                    <h1 class="title">The Louvre Museum(Musée du Louvre)</h1>
+                    <div class="infoWrap">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="author">Admin</span>
+                        <span class="bar">|</span>
+                        <span class="time">2022.04.18</span>
                     </div>
                 </div>
             </div>
+            <div class="imgArea">
+                <div class="cover"></div>
+            </div>
         </div>
-        <div class="footerWrap">
-            <!--footer-->
+        <div class="contentWrap" id="scrollEvent">
+            <div class="headerCover" id="headerCover"></div>
+            <div class="postWrap">
+                <div class="post">
+                    <h1>The Louvre Museum</h1>
+                    <img src="./assets/img/header.jpg"/>
+                    <p>The Louvre Museum (French: Musée du Louvre) is a national museum located in Rivoli, the heart of Paris, France. In terms of the number and quality of its collections, it is one of the world's leading museums along with the Metropolitan Museum of Art and the British Museum. The present building is a converted Louvre Palace and has been designated as a World Heritage Site, including around the Seine River in Paris. The Louvre Pyramid, a glass pyramid sculpture in front of the Louvre Museum, was built in modern times and was once criticized as inappropriate. In French, it is also called Muset du Louvre, Grand Louvre, or simply the Louvre.</p>
+                    <h1>Mona Lisa</h1>
+                    <img src="./assets/img/img1.jpg"/>
+                    <p>The Louvre Museum is located inside the Louvre Palace. The construction of the Louvre Palace began in the late 12th century on the order of King Philip II, and at that time it was not a palace but a fortress. You can still see remnants of the fortress from that time. The building was expanded several times before the fortress became the Louvre Palace. In 1672, Louis XIV decided to reside at the Palace of Versailles and made the Louvre a place to display the royal collection.</p>
+                    <img class="map" src="./assets/img/map.png"/>
+                </div>
+                <div class="recommendWrap">
+                    <div class="recommendBtn">
+                        <i class="fa-solid fa-heart icon"></i>
+                        <span class="recommendNum">78</span>
+                    </div>
+                </div>
+                <div class="commentWrap">
+                    <form action="">
+                        <textarea name="comment" class="commentInput" cols="30" rows="5"></textarea>
+                        <input type="submit" value="등록"/>
+                    </form>
+                    <div class="comments">
+                        <div class="comment">
+                            <div class="info">
+                                <span class="name">name</span>
+                                <span class="time">22.03.31</span>
+                            </div>
+                            <div class="message">
+                                <p>Hi, This is comment!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--footer-->
+            </div>
         </div>
     </div>
+    <script>
+        let scrollE=window.document.getElementById("scrollEvent");
+        let cover=window.document.getElementById("headerCover");
+        scrollE.addEventListener('scroll',e=>{
+            if(window.innerHeight>=scrollE.scrollTop) cover.style.opacity=scrollE.scrollTop/(0.9*window.innerHeight);
+        });
+    </script>
 </body>
 </html>
