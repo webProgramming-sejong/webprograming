@@ -1,0 +1,141 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="Ie=edge" />
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="SignUpStyle.css" type="text/css" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"><!--france favicon for the website -->
+  </head>
+  <body>
+    <div class="signupbox">
+    
+      <h1>Sign Up</h1>
+
+      <form action="">
+        
+        <div class="input-container">
+          <input type="text" name="Username" class="input"/>
+          <label for="">Please enter your username</label>
+          <span>Please enter your username</span><!--to make the sentence go up when you type-->
+      </div>
+
+      <div class="input-container">
+          <input type="text" name="ID" id="ID"class="input"/>
+          <label for="ID">Please enter your ID</label>
+          <span>Please enter your ID</span>
+      </div>
+
+      <div class="input-container">
+          <input type="password" name="Password" id="Password"class="input"/>
+          <label for="Password">Please enter your password</label>
+          <span>Please enter your password</span>
+      </div>
+
+      <div class="input-container">
+          <input type="password" name="Password2" id="password"class="input"/>
+          <label for="Password2">Please enter your password again</label>
+          <span>Please enter your password again</span>
+      </div>
+
+      <label>Birthday<label><br>
+    <select name="year">
+      <option value="">-- select --</option>
+      <option value="1995">1995</option>
+      <option value="1996">1996</option>
+      <option value="1997">1997</option>
+      <option value="1998">1998</option>
+      <option value="1999">1999</option>
+      <option value="2000">2000</option>
+      <option value="2000">2001</option>
+      <option value="2000">2002</option>
+      <option value="2000">2003</option>
+    </select>
+    <select name="month">
+      <option value="">-- select --</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+    <select name="day">
+      <option value="">-- select --</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+      <option value="25">25</option>
+      <option value="26">26</option>
+      <option value="27">27</option>
+      <option value="28">28</option>
+      <option value="29">29</option>
+      <option value="30">30</option>
+      <option value="31">31</option>
+    </select>
+    <br><br>
+
+      <div class="input-container">
+          <input type="text" name="Email" id="Email" class="input"/>
+          <label for="Email">Please enter your email</label>
+          <span>Please enter your email</span>
+      </div>
+
+      <label for="terms"><input type="checkbox"/>I agree to the terms.</label>
+      
+      <input type="submit" name="submit" value="Create" />
+      <br>
+      <a href="https://naver.com" target="_blank">Already have an account? - Login</a>
+    </form>
+
+    </div>
+
+    <script type="text/javascript">/*for the sentence go up*/
+      const inputs=document.querySelectorAll(".input");
+
+      function focusFunc() {
+        let parent = this.parentNode
+        parent.classList.add("focus");
+      }
+
+      function blurFunc() {
+        let parent=this.parentNode;
+        if(this.value==""){
+          parent.classList.remove("focus")
+        }
+      }
+
+      inputs.forEach(input =>{
+        input.addEventListener("focus", focusFunc)
+        input.addEventListener("blur", blurFunc)
+      })
+    </script>
+  </body>
+</html>
