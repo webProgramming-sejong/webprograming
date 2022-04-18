@@ -12,9 +12,10 @@
     <title>Detail</title>
 </head>
 <body>
-    <!--들어가야하는 내용(장소이름,등록날짜,사진,위치,설명,댓글,좋아요)-->
     <div class="detail">
+        <!--Header-->
         <div class="header">
+            <!--TextArea(Displays tag,title,author,time)-->
             <div class="textArea">
                 <div class="titleWrap">
                     <span class="tag">museum</span>
@@ -27,13 +28,18 @@
                     </div>
                 </div>
             </div>
+            <!--ImageArea(Displays a representative image)-->
             <div class="imgArea">
+                <!--Image cover for gradation effect on top of image-->
                 <div class="cover"></div>
             </div>
         </div>
+        <!--Content that includes relevant images, comments, recommendations buttons, and locations-->
         <div class="contentWrap" id="scrollEvent">
+            <!--When scrolling down, the cover is covered over the header-->
             <div class="headerCover" id="headerCover"></div>
             <div class="postWrap">
+                <!--Wrap around the text of travel destinations-->
                 <div class="post">
                     <h1>The Louvre Museum</h1>
                     <img src="./assets/img/header.jpg"/>
@@ -43,12 +49,14 @@
                     <p>The Louvre Museum is located inside the Louvre Palace. The construction of the Louvre Palace began in the late 12th century on the order of King Philip II, and at that time it was not a palace but a fortress. You can still see remnants of the fortress from that time. The building was expanded several times before the fortress became the Louvre Palace. In 1672, Louis XIV decided to reside at the Palace of Versailles and made the Louvre a place to display the royal collection.</p>
                     <img class="map" src="./assets/img/map.png"/>
                 </div>
+                <!--Wrap around the recommend button-->
                 <div class="recommendWrap">
                     <div class="recommendBtn">
                         <i class="fa-solid fa-heart icon"></i>
                         <span class="recommendNum">78</span>
                     </div>
                 </div>
+                <!--Wrap around the comments button-->
                 <div class="commentWrap">
                     <form action="">
                         <textarea name="comment" class="commentInput" cols="30" rows="5"></textarea>
@@ -66,11 +74,12 @@
                         </div>
                     </div>
                 </div>
-                <!--footer-->
+                <!--Place where footer needs to be added-->
             </div>
         </div>
     </div>
     <script>
+        /* Code that creates the ability to cover headers by adjusting transparency as you scroll down */
         let scrollE=window.document.getElementById("scrollEvent");
         let cover=window.document.getElementById("headerCover");
         scrollE.addEventListener('scroll',e=>{

@@ -1,6 +1,8 @@
+/* Apply Full Font */
 * {
     font-family: 'Inter', sans-serif;
 }
+/* Remove margin for body tag */
 body {
     margin:0;
 }
@@ -74,6 +76,7 @@ body {
     background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 90px);
     padding: 210px 20% 90px 20%;
 }
+/* post */
 .detail .contentWrap .postWrap .post {
     width: 100%;
     margin-bottom: 80px;
@@ -96,6 +99,7 @@ body {
     width: 60%;
     margin: 0 auto;
 }
+/* recommendWrap */
 .detail .contentWrap .postWrap .recommendWrap {
     width: 100%;
     text-align: center;
@@ -123,7 +127,7 @@ body {
     margin-right: 4px;
     font-size: 18px;
 }
-.detail .contentWrap .postWrap .recommendWrap .recommendBtn 
+/* commentWrap */
 .detail .contentWrap .postWrap.commentWrap {
 
 }
