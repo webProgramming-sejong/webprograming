@@ -6,6 +6,9 @@
 body {
     margin:0;
 }
+a {
+    text-decoration: none;
+}
 .detail {
     position: relative;
     width: 100vw;
@@ -105,7 +108,7 @@ body {
     text-align: center;
     padding-bottom:60px;
     border-bottom:1px solid rgb(212, 212, 212);
-    margin: 30px 0;
+    margin: 30px 0 35px 0;
 }
 .detail .contentWrap .postWrap .recommendWrap .recommendBtn.active {
     color: #FE251B;
@@ -128,6 +131,51 @@ body {
     font-size: 18px;
 }
 /* commentWrap */
-.detail .contentWrap .postWrap.commentWrap {
-
+.detail .contentWrap .postWrap .commentWrap {
+    width: 100%;
 }
+.detail .contentWrap .postWrap .commentWrap .submitForm {
+    display: flex;
+    width: 100%;
+    height: 70px;
+}
+.detail .contentWrap .postWrap .commentWrap .submitForm .commentInput {
+    flex: 5;
+    height: 70px;
+    border: 1px solid rgb(212, 212, 212);
+    resize: none;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.detail .contentWrap .postWrap .commentWrap .submitForm .commentInput:focus {
+    outline:none;
+}
+.detail .contentWrap .postWrap .commentWrap .submitForm .commentSubmit {
+    flex: 1;
+    height: 70px;
+    background-color:#bd9b61;
+    border:none;
+    color: #fff;
+    font-size: 16px;
+}
+.detail .contentWrap .postWrap .commentWrap .comments {
+    width: 100%;
+}
+.detail .contentWrap .postWrap .commentWrap .comments .comment {
+    width: 100%;
+    padding: 20px 15px 15px 15px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+.detail .contentWrap .postWrap .commentWrap .comments .comment .name {
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+.detail .contentWrap .postWrap .commentWrap .comments .comment .message {
+    margin-bottom: 5px;
+}
+.detail .contentWrap .postWrap .commentWrap .comments .comment .time {
+    font-size: 14px;
+    color: rgb(159, 159, 159);
+}
+
