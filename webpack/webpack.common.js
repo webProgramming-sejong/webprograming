@@ -21,7 +21,7 @@ const mainSectionConfig = {
 module.exports = {
 	entry: {
 		main: path.resolve(__dirname, '../src/index.js'),
-		section: path.resolve(__dirname, '../src/mainSection.js')
+		section: path.resolve(__dirname, '../src/scripts/mainSection.js')
 	},
 	output: {
 		path: path.resolve(__dirname, '../dist'),
@@ -60,7 +60,7 @@ module.exports = {
 
 			//image
 			{
-				test: /\.(svg|ic|png|webp|jpg|gif|jpeg)$/,
+				test: /\.(svg|ic|png|webp|jpg|gif|jpeg|cur)$/,
 				type: 'asset/resource',
 				generator: {
 					filename: 'assets/image/[name][ext]'

@@ -12,8 +12,73 @@ body {
 	background-color: #ffffff;
 	display: flex;
 	justify-content: center;
-	z-index: 100;
+	align-items: center;
 	overflow: hidden;
+}
+.background-marquee{
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+
+	
+	.mq:nth-child(1){
+		background-color: blue;
+		transform: translateX(-105vw);
+		animation: marquee1 1s ease 3.5s forwards;
+	}
+	.mq:nth-child(2){
+		background-color: white;
+		transform: translateX(105vw);
+		animation: marquee2 1.5s ease 3.5s forwards;
+	}
+	.mq:nth-child(3){
+		background-color: red;
+		transform: translateX(-105vw);
+		animation: marquee1 1s ease 3.5s forwards;
+	}
+	
+}
+.mq{
+	height: 33.33333vh;
+	width: 100vw;;
+	overflow: hidden;
+	min-height: 250px;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	border: 5px solid #121212;
+	position: relative;
+	
+}
+.mq-text{
+	font-size: 120px;
+	line-height: 240px;
+	width: 150%;
+	word-wrap: normal;
+	position: relative;
+	white-space: nowrap;
+	&:hover{
+		animation-play-state: paused;
+	}
+}
+.mq-france{
+	animation: marquee-text 60s linear 5s infinite forwards;
+}
+.mq-pour{
+	
+	animation: marquee-text-reverse 60s linear 5s infinite forwards;
+}
+.mq-tous{
+	animation: marquee-text 60s linear 5s infinite forwards;
+}
+
+#canvas {
+	display: none;
+	
 }
 
 .logo_image {
@@ -21,7 +86,7 @@ body {
 	background-size: contain;
 	width: 300px;
 	height: 150px;
-	z-index: 100;
+	z-index: 105;
 	position: absolute;
 	left: calc(50% - 150px);
 	top: 160px;
@@ -30,14 +95,20 @@ body {
 }
 .landing {
 	position: relative;
-	width: 100vw;
+	width: 70vw;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
+	overflow: hidden;
+	box-shadow : 2px 2px 6px rgba(0,0,0,0.1),  -2px -2px 6px rgba(0,0,0,0.1);
+	z-index: 101;
+	min-width: 1000px;
+	
+
+
 }
 #canvas {
 	position: absolute;
-	left: calc(100% / 6);
 }
 
 .helper_drag,
@@ -78,9 +149,15 @@ body {
 	animation: letter-adjustment-mid 1s ease-in-out 1s forwards;
 }
 
+.helper_wrapper{
+	top : 0;
+	left : 0;
+	width : 50%;
+	height : 100vh;
+}
 .helper_circle {
-	top: calc(50vh + 100px);
-	left: 300px;
+	top: calc(50% + 100px);
+	left: calc(50% - 150px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -88,6 +165,7 @@ body {
 	stroke-dasharray: 80 10;
 	opacity: 0;
 	animation: show-circle-helper 1s ease-in-out 3s forwards;
+	cursor: pointer;
 }
 .helper_circle circle {
 	position: absolute;
@@ -108,7 +186,7 @@ body {
 
 .helper_path {
 	top: calc(50% - 100px);
-	left: calc(50% - 140px);
+	right: 154px;
 	display: none;
 }
 .helper_path .path {
@@ -118,7 +196,7 @@ body {
 }
 .helper_arrow {
 	top: calc(50% + 30px);
-	left: calc(50% - 350px);
+	left: calc(50% - 67px);
 	animation: show-arrow-helper 4s linear 4s alternate infinite;
 	opacity: 0;
 }

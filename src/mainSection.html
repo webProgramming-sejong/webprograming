@@ -1,1 +1,65 @@
-<section class="main-section"><div id="progressBar"></div></section>
+<section class="main-section">
+    <div class="cover"></div>
+    <div class="background-water">
+    </div>
+	<nav>
+		<ul>
+			<li class="navigation">
+                <div class="navContainer">
+                    <div class="mask mask-profile"></div>
+                    <i class="fa-solid fa-user"></i>
+                    <span>Profile</span></li>
+                </div>
+                
+			<li class="navigation">
+                <div class="navContainer">
+                    <div class="mask mask-fav "></div>
+                    <i class="fa-solid fa-right-from-bracket        fav"></i><span class='fav'>Fav</span></li>
+                </div>
+			<li class="navigation">
+                <div class="navContainer">
+                    <div class="mask mask-logout"></div>
+                    <i class="fa-solid fa-right-from-bracket"></i><span>Log out</span></li>
+                </div>
+		</ul>
+	</nav>
+	<ul class="content-list">
+        <li class="content">
+              <div class="clipText">Museum</div>
+              <span class="content-name">Museum</span>
+             <div class="highlight"></div>
+
+        </li>
+        <li class="content">
+            <div class="clipText">Museum</div>
+            <span class="content-name">Museum</span>
+            <div class="highlight"></div>
+        
+            
+            </li>
+        <li class="content">
+            <div class="clipText">Museum</div>
+            <span class="content-name">Museum</span>
+            <div class="highlight"></div>
+          
+            </li>
+        <li class="content">
+            <div class="clipText">Museum</div>
+            <span class="content-name">Museum</span>
+            <div class="highlight"></div>
+           
+            </li>
+        <li class="content">
+            <div class="clipText">Museum</div><span class="content-name">Museum</span>
+            <div class="highlight"></div>
+          
+            </li>
+    </ul>
+</section>
+<svg>
+    <filter id='turbulence' x='0' y='0' width='100%' height='100%'>
+        <feTurbulence id='water' numOctaves='3' seed='2' baseFrequency = '0.02 0.05'></feTurbulence>
+        <feDisplacementMap scale='20' in='SourceGraphic'></feDisplacementMap>
+        <animate xlink:href='#water' dur='60s' keyTimes='0;0.5;1' attributeName='baseFrequency' values='0.02 0.06; 0.04 0.08; 0.02 0.06' repeatCount='indefinite'></animate>
+    </filter>
+</svg>
