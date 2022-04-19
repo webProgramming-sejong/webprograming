@@ -2,17 +2,18 @@ import * as PIXI from 'pixi.js';
 import { Point } from '@pixi/math';
 const canvas = document.getElementById('canvas');
 
+document.head.children[17].remove();
+document.head.children[16].remove();
+document.head.children[13].remove();
+document.head.children[12].remove();
+console.dir(document.head.children);
 window.onload = () => {
 	setTimeout(() => init(), 3000);
-
-
 };
-
 
 let isCircleClick = false;
 const init = () => {
-	
-	const container =  document.querySelector('.landing');
+	const container = document.querySelector('.landing');
 	const circleSvg = document.getElementsByClassName('helper_circle')[0];
 	const helperPath = document.getElementsByClassName('helper_path')[0];
 
@@ -28,7 +29,7 @@ const init = () => {
 		height: container.clientHeight,
 		resolution: window.devicePixelRatio,
 		autoDensity: true,
-		view: canvas,
+		view: canvas
 	});
 
 	// document.body.appendChild(app.view);
@@ -220,7 +221,6 @@ const init = () => {
 
 	let isHit = false;
 
-
 	const endPos = {
 		x: container.clientWidth / 6 + (container.clientWidth * 1) / 2,
 		y: container.clientHeight / 2
@@ -228,23 +228,21 @@ const init = () => {
 	circleSvg.addEventListener('click', (_) => {
 		helperPath.classList.add('show_up');
 		isCircleClick = true;
-		container.style.cursor = "url('/assets/svg/paint-brush.svg') 2 2 , auto"
+		container.style.cursor = "url('/assets/svg/paint-brush.svg') 2 2 , auto";
 		// document.body.children[2].children[2].remove();
 		document.body.children[3].children[1].remove();
 	});
-
 };
 
 const reArrangeDomElement = (target) => {
-
-	console.dir(target)
+	console.dir(target);
 	document.body.children[4].classList.add('load');
 	document.body.children[3].remove();
 	document.body.children[0].remove();
 
 	target.scriptToRemove.parentNode.removeChild(target.scriptToRemove);
 	document.body.appendChild(target.scriptToAdd);
-	
+
 	setTimeout(() => {
 		const imgToRemove = document.querySelector('div');
 		const svgToRemove = document.querySelector('svg');

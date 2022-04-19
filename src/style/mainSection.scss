@@ -13,9 +13,7 @@
 	top: 0;
 	width: 100vw;
 	min-width: 1000px;
-
-
-	overflow: scroll;
+	overflow: hidden;
 }
 .background-water {
 	width: 100%;
@@ -54,14 +52,13 @@ nav {
 	transform: translateY(-200px);
 	background-color: black;
 	animation: revealNav 0.5s ease-in 3s forwards;
-	
+
 	ul {
 		display: flex;
 		justify-content: center;
-	
 	}
 	li {
-		font-size: 1.6rem;
+		font-size: 1.6em;
 		font-weight: 300;
 		background: none;
 		color: black;
@@ -131,18 +128,18 @@ nav {
 		position: relative;
 		color: white;
 		margin-bottom: 48px;
-		height: 9rem;
+		height: 6rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		padding: 12px;
-		&:active{
+		&:active {
 			animation: none;
 			animation-play-state: paused;
-			.clipText{
+			.clipText {
 				transform: scale(0.8);
 			}
-			.content-name{
+			.content-name {
 				transform: scale(0.8);
 			}
 		}
@@ -152,17 +149,15 @@ nav {
 				width: 110%;
 			}
 			animation: pulse 1s ease 2s infinite;
-			.content-name{
+			.content-name {
 				// transform: scale(1.2);
-				
+
 				clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
-	
 			}
 		}
 		// .clipText:hover ~ .content-name{
 		// 	clip-path: polygon(0 0, 100% 0, 100% 0, 0% 0%);
 		// }
-	
 	}
 }
 
@@ -179,7 +174,6 @@ nav {
 }
 .highlight {
 	position: absolute;
-	background-color: blueviolet;
 	z-index: -1;
 	bottom: -1rem;
 	left: -5%;
@@ -187,8 +181,23 @@ nav {
 	transition: all 0.3s ease;
 	height: 2rem;
 }
+.highlight :nth-child(1) {
+	height: 33.3333%;
+	background-color: blue;
+	width: 100%;
+}
+.highlight :nth-child(2) {
+	height: 33.3333%;
+	background-color: white;
+	width: 100%;
+}
+.highlight :nth-child(3) {
+	height: 33.3333%;
+	background-color: red;
+	width: 100%;
+}
 
-.clipText{
+.clipText {
 	font-size: 9em;
 	font-weight: bold;
 	position: absolute;

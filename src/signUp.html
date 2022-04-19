@@ -1,0 +1,74 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="Ie=edge" />
+		<title>Sign Up Form</title>
+		<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon/favicon.ico" />
+		<!--france favicon for the website -->
+	</head>
+	<body>
+		<script type="text/javascript">
+			const styleSheet = document.createElement('link');
+			styleSheet.href = './signup.css';
+			styleSheet.rel = 'stylesheet';
+			document.head.appendChild(styleSheet);
+		</script>
+		<div class="signupbox">
+			<h1>Sign Up</h1>
+
+			<form action="">
+				<div class="input-container">
+					<input type="text" name="Username" class="input" />
+					<label for="">Please enter your username</label>
+					<span>Please enter your username</span
+					><!--to make the sentence go up when you type-->
+				</div>
+
+				<div class="input-container">
+					<input type="password" name="Password" id="Password" class="input" />
+					<label for="Password">Please enter your password</label>
+					<span>Please enter your password</span>
+				</div>
+
+				<div class="input-container">
+					<input type="password" name="Password2" id="password" class="input" />
+					<label for="Password2">Password Comfirmation</label>
+					<span>Password Comfirmation</span>
+				</div>
+
+				<div class="input-container">
+					<input type="text" name="Email" id="Email" class="input" />
+					<label for="Email">Please enter your email</label>
+					<span>Please enter your email</span>
+				</div>
+
+				<input type="submit" name="submit" value="Create" />
+				<br />
+				<a href="./login.html" target="_blank">Already have an account? - Login</a>
+			</form>
+		</div>
+
+		<script type="text/javascript">
+			/*for the sentence go up*/
+			const inputs = document.querySelectorAll('.input');
+
+			function focusFunc() {
+				let parent = this.parentNode;
+				parent.classList.add('focus');
+			}
+
+			function blurFunc() {
+				let parent = this.parentNode;
+				if (this.value == '') {
+					parent.classList.remove('focus');
+				}
+			}
+
+			inputs.forEach((input) => {
+				input.addEventListener('focus', focusFunc);
+				input.addEventListener('blur', blurFunc);
+			});
+		</script>
+	</body>
+</html>

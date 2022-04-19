@@ -1,0 +1,174 @@
+@import './keyframes.scss';
+
+* {
+	font-family: 'Inter', sans-serif;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background: rgb(88, 194, 255);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	/* body */
+}
+.input-container {
+	position: relative;
+}
+.input-container label {
+	position: absolute;
+	top: 40%;
+	left: 10px;
+	transform: translateY(-50%);
+	padding: 0 0.4rem;
+	color: rgb(255, 255, 255);
+	font-size: 0.9rem;
+	font-weight: 400;
+	pointer-events: none;
+	z-index: 1000;
+	transition: 0.2s;
+}
+.input-container span {
+	position: absolute;
+	top: 0;
+	left: 15px;
+	transform: translateY(-50%);
+	padding: 0 0.4rem;
+	color: transparent;
+	font-size: 0.8rem;
+	pointer-events: none;
+	z-index: 500;
+}
+.input-container span::before,
+.input-container span::after {
+	content: '';
+	position: absolute;
+	width: 30%;
+	opacity: 0;
+	transition: 0.2s;
+	height: 10px;
+	background-color: rgb(0, 162, 255);
+	top: 50%;
+	transform: translateY(-50%);
+}
+.input-container span::before {
+	left: 50%;
+}
+.input-container span::after {
+	right: 50%;
+}
+.input-container.focus label {
+	top: 0;
+	transform: translateY(-50%);
+	left: 15px;
+	font-size: 0.8rem;
+}
+.input-container.focus span::after,
+.input-container.focus span::before {
+	width: 50%;
+	opacity: 1;
+}
+/* In this css, the letters are moved by adjusting them through 
+z-index by distinguishing between span and non-span. */
+
+.signinbox {
+	width: 360px;
+	height: 550px;
+	background-color: rgb(0, 162, 255);
+	border-radius: 30px;
+	color: rgb(255, 255, 255);
+	position: relative;
+	box-sizing: border-box;
+	padding: 50px 30px;
+	box-shadow: 1px 1px 5px 1px #020408;
+	animation: fadeIn ease 0.5s;
+	/* Login Box */
+}
+h1 {
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 26px;
+	/* login letter */
+}
+.signinbox p,
+label {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 13px;
+	text-align: left;
+	/* Check box letter */
+}
+.signinbox input {
+	width: 100%;
+	margin-bottom: 10px;
+	/* Size around check box */
+}
+.signinbox .input {
+	position: relative;
+	border: 1px solid rgb(255, 255, 255);
+	background: transparent;
+	outline: none;
+	height: 30px;
+	right: 5px;
+	color: rgb(255, 255, 255);
+	border-radius: 10px;
+	text-align: left;
+	padding-left: 10px;
+}
+.input-text {
+	position: relative;
+	border: 1px solid rgb(255, 255, 255);
+	background: transparent;
+	outline: none;
+	height: 30px;
+	right: 5px;
+	color: rgb(255, 255, 255);
+	border-radius: 10px;
+	text-align: left;
+	padding-left: 10px;
+	/* ID password text box */
+}
+.signinbox input[type='checkbox'] {
+	width: 10px;
+	height: 20px;
+	color: rgb(255, 255, 255);
+	text-align: right;
+	/* check box */
+}
+.signinbox input[type='submit'] {
+	border: none;
+	outline: none;
+	height: 40px;
+	margin-top: 10px;
+	background: #f8dd44;
+	box-shadow: 1px 1px 5px 1px #000000;
+	color: rgb(0, 0, 0);
+	font-size: 18px;
+	border-radius: 20px;
+	/* sign in click box */
+}
+.signinbox input[type='submit']:hover {
+	cursor: pointer;
+	background: #dea700;
+	color: #000;
+	box-shadow: 1px 1px 5px 1px #000000 inset;
+	/* sign in hover */
+}
+
+/* sign up button */
+.signinbox a {
+	padding-top: 20px;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 8px;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	display: block;
+}
+.signinbox a:hover {
+	color: #ec0d0d;
+}

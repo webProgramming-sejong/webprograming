@@ -18,10 +18,24 @@ const mainSectionConfig = {
 	minify: true
 };
 
+const loginConfig = {
+	filename: 'login.html',
+	chunks: ['subpage'],
+	template: path.resolve(__dirname, '../src/login.html'),
+	minify: true
+};
+const signUpConfig = {
+	filename: 'signUp.html',
+	chunks: ['subpage'],
+	template: path.resolve(__dirname, '../src/signUp.html'),
+	minify: true
+};
 module.exports = {
 	entry: {
 		main: path.resolve(__dirname, '../src/index.js'),
-		section: path.resolve(__dirname, '../src/scripts/mainSection.js')
+		section: path.resolve(__dirname, '../src/scripts/mainSection.js'),
+		login: path.resolve(__dirname, '../src/style/login.css'),
+		signup: path.resolve(__dirname, '../src/style/SignUpStyle.css')
 	},
 	output: {
 		path: path.resolve(__dirname, '../dist'),
@@ -29,6 +43,9 @@ module.exports = {
 		clean: true,
 		assetModuleFilename: '[name][ext]',
 		publicPath: '/'
+	},
+	optimization: {
+		runtimeChunk: 'single'
 	},
 	plugins: [
 		new CopyWebpackPlugin({
@@ -40,15 +57,18 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin(htmlConfig),
 		new HtmlWebpackPlugin(mainSectionConfig),
-
-		new MiniCSSExtractPlugin()
+		new HtmlWebpackPlugin(loginConfig),
+		new HtmlWebpackPlugin(signUpConfig),
+		new MiniCSSExtractPlugin({
+			filename: '[name].css'
+		})
 	],
 	module: {
 		rules: [
 			//html
 			{
 				test: /\.html$/,
-				use: ['html-loader'] // 흑흑 시발 ...
+				use: ['html-loader']
 			},
 			//css
 			{ test: /\.css$/, use: [MiniCSSExtractPlugin.loader, 'css-loader'] },
