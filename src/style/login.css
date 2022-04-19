@@ -6,7 +6,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: rgb(88, 194, 255);
+	background: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
