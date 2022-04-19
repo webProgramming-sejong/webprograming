@@ -1,0 +1,193 @@
+/* Apply Full Font */
+* {
+	font-family: 'Inter', sans-serif;
+}
+/* Remove margin for body tag */
+body {
+	margin: 0;
+}
+/* Remove underline for a tag */
+a {
+	text-decoration: none;
+}
+.detail {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+}
+/* header */
+.detail .header {
+	display: inline-flex;
+	width: 100%;
+	height: 100%;
+}
+.detail .header .textArea {
+	display: flex;
+	flex: 1;
+	align-items: center;
+}
+.detail .header .textArea .titleWrap {
+	width: 100%;
+	padding: 0 12% 0 10%;
+}
+.detail .header .textArea .titleWrap .tag {
+	background-color: #bd9b61;
+	color: #fff;
+	padding: 4px 10px;
+}
+.detail .header .textArea .titleWrap .title {
+	font-size: 41px;
+}
+.detail .header .textArea .titleWrap .infoWrap {
+	font-weight: 300;
+}
+.detail .header .textArea .titleWrap .infoWrap .bar {
+	margin: 0 5px;
+}
+.detail .header .imgArea {
+	flex: 1;
+	background-image: url(/assets/jpeg/header.jpg);
+	background-position: 50% 50%;
+	background-size: cover;
+}
+.detail .header .imgArea .cover {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 20%);
+}
+
+/* contentWrap */
+.detail .contentWrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.detail .contentWrap .headerCover {
+	display: inline-block;
+	width: 100%;
+	height: calc(100% + 160px);
+	background-color: #fff;
+	opacity: 0;
+}
+.detail .contentWrap .postWrap {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 90px);
+	padding: 210px 20% 90px 20%;
+}
+/* post */
+.detail .contentWrap .postWrap .post {
+	width: 100%;
+	margin-bottom: 80px;
+}
+.detail .contentWrap .postWrap .post h1 {
+	font-size: 37px;
+	font-weight: 500;
+}
+.detail .contentWrap .postWrap .post p {
+	line-height: 180%;
+	font-size: 18px;
+	margin-bottom: 40px;
+	font-weight: 300;
+}
+.detail .contentWrap .postWrap .post img {
+	width: 100%;
+}
+.detail .contentWrap .postWrap .post img.map {
+	display: block;
+	width: 60%;
+	margin: 0 auto;
+}
+/* recommendWrap */
+.detail .contentWrap .postWrap .recommendWrap {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 60px;
+	border-bottom: 1px solid rgb(212, 212, 212);
+	margin: 30px 0 35px 0;
+}
+.detail .contentWrap .postWrap .recommendWrap .recommendBtn.active {
+	color: #fe251b;
+	border-color: #fe251b;
+}
+.detail .contentWrap .postWrap .recommendWrap .recommendBtn {
+	color: rgb(206, 206, 206);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 72px;
+	height: 72px;
+	border: 1px solid rgb(206, 206, 206);
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.detail .contentWrap .postWrap .recommendWrap .recommendBtn .icon {
+	margin-right: 4px;
+	font-size: 18px;
+}
+/* commentWrap */
+.detail .contentWrap .postWrap .commentWrap {
+	width: 100%;
+}
+/* commentWrap - submitForm */
+.detail .contentWrap .postWrap .commentWrap .submitForm {
+	display: flex;
+	width: 100%;
+	height: 70px;
+}
+.detail .contentWrap .postWrap .commentWrap .submitForm .commentInput {
+	flex: 5;
+	height: 70px;
+	border: 1px solid rgb(212, 212, 212);
+	resize: none;
+	font-size: 16px;
+	box-sizing: border-box;
+}
+.detail .contentWrap .postWrap .commentWrap .submitForm .commentInput:focus {
+	outline: none;
+}
+.detail .contentWrap .postWrap .commentWrap .submitForm .commentSubmit {
+	flex: 1;
+	height: 70px;
+	background-color: #bd9b61;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+}
+/* commentWrap - comments */
+.detail .contentWrap .postWrap .commentWrap .comments {
+	width: 100%;
+}
+.detail .contentWrap .postWrap .commentWrap .comments .comment {
+	width: 100%;
+	padding: 20px 15px 15px 15px;
+	box-sizing: border-box;
+	border-bottom: 1px solid rgb(212, 212, 212);
+}
+.detail .contentWrap .postWrap .commentWrap .comments .comment .name {
+	font-weight: 600;
+	margin-bottom: 3px;
+}
+.detail .contentWrap .postWrap .commentWrap .comments .comment .message {
+	margin-bottom: 5px;
+}
+.detail .contentWrap .postWrap .commentWrap .comments .comment .time {
+	font-size: 14px;
+	color: rgb(159, 159, 159);
+}
+
+/* media query for responsive web design */
+@media (max-width: 767px) {
+	.detail .header {
+		flex-direction: column-reverse;
+	}
+	.detail .contentWrap .postWrap {
+		padding: 210px 10% 90px 10%;
+	}
+}

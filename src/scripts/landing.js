@@ -1,12 +1,22 @@
 import * as PIXI from 'pixi.js';
 import { Point } from '@pixi/math';
 const canvas = document.getElementById('canvas');
+console.dir(document.head.children);
+
+document.head.children[25].remove();
+document.head.children[24].remove();
+document.head.children[23].remove();
+document.head.children[22].remove();
+document.head.children[21].remove();
+document.head.children[20].remove();
 
 document.head.children[17].remove();
 document.head.children[16].remove();
+document.head.children[15].remove();
+document.head.children[14].remove();
 document.head.children[13].remove();
 document.head.children[12].remove();
-console.dir(document.head.children);
+
 window.onload = () => {
 	setTimeout(() => init(), 3000);
 };

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>hotel</title>
+		<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon/favicon.ico" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon/favicon.ico" />
+	</head>
+	<body>
+		<script type="text/javascript">
+			const styleSheet = document.createElement('link');
+			styleSheet.href = './hotel.css';
+			styleSheet.rel = 'stylesheet';
+			document.head.appendChild(styleSheet);
+		</script>
+		<!-- Odd row with left picture and right text -->
+		<div class="parent-elem element1">
+			<img src="/assets/jpeg/hotel1.jpg" alt="#" class="picture" />
+			<a href="#">
+				<div class="text">
+					<h1>Hotel Gavarni Paris</h1>
+					<p>
+						Overall, the hotel has a clean atmosphere.<br />
+						All tourist attractions such as nearby<br />
+						museums, aquariums, Eiffel Tower, etc. are within 1km.<br />
+					</p>
+				</div>
+			</a>
+		</div>
+		<!-- Even row with picture to right and text to left -->
+		<div class="parent-elem element2" style="top: 600px">
+			<a href="#">
+				<div class="text">
+					<h1>Grand Hotel<br />Dechampaigne</h1>
+					<p>
+						400 meters to the Louvre, 120 meters to Chatelet Station<br />
+						Other tourist attractions are within 400m to 1km<br />
+						Breakfast is served.<br />
+					</p>
+				</div>
+			</a>
+			<img src="/assets/jpeg/hotel2.jpg" alt="#" class="picture" />
+		</div>
+		<!-- Repeat odd and even rows as above -->
+		<div class="parent-elem element1" style="top: 1200px">
+			<img src="/assets/jpeg/hotel3.jpg" alt="#" class="picture" />
+			<a href="#">
+				<div class="text">
+					<h1>Hotel des<br />Roys Versailles</h1>
+					<p>
+						800m to Versailles Palace<br />
+						300m to Versailles Chateau Liv Ghosh Station<br />
+						Breakfast is served.<br />
+					</p>
+				</div>
+			</a>
+		</div>
+	</body>
+</html>

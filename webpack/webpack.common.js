@@ -30,12 +30,41 @@ const signUpConfig = {
 	template: path.resolve(__dirname, '../src/signUp.html'),
 	minify: true
 };
+const hotelConfig = {
+	filename: 'hotel.html',
+	chunks: ['subpage'],
+	template: path.resolve(__dirname, '../src/hotel.html'),
+	minify: true
+};
+
+const restaurantConfig = {
+	filename: 'restaurant.html',
+	chunks: ['subpage'],
+	template: path.resolve(__dirname, '../src/restaurant.html'),
+	minify: true
+};
+const detailConfig = {
+	filename: 'detail.html',
+	chunks: ['subpage'],
+	template: path.resolve(__dirname, '../src/detail.html'),
+	minify: true
+};
+const museumConfig = {
+	filename: 'museum.html',
+	chunks: ['subpage'],
+	template: path.resolve(__dirname, '../src/museum.html'),
+	minify: true
+};
 module.exports = {
 	entry: {
 		main: path.resolve(__dirname, '../src/index.js'),
 		section: path.resolve(__dirname, '../src/scripts/mainSection.js'),
 		login: path.resolve(__dirname, '../src/style/login.css'),
-		signup: path.resolve(__dirname, '../src/style/SignUpStyle.css')
+		signup: path.resolve(__dirname, '../src/style/SignUpStyle.css'),
+		hotel: path.resolve(__dirname, '../src/style/hotel.css'),
+		restaurant: path.resolve(__dirname, '../src/style/restaurant.css'),
+		detail: path.resolve(__dirname, '../src/style/detail.css'),
+		museum: path.resolve(__dirname, '../src/style/museum.css')
 	},
 	output: {
 		path: path.resolve(__dirname, '../dist'),
@@ -59,6 +88,10 @@ module.exports = {
 		new HtmlWebpackPlugin(mainSectionConfig),
 		new HtmlWebpackPlugin(loginConfig),
 		new HtmlWebpackPlugin(signUpConfig),
+		new HtmlWebpackPlugin(hotelConfig),
+		new HtmlWebpackPlugin(restaurantConfig),
+		new HtmlWebpackPlugin(detailConfig),
+		new HtmlWebpackPlugin(museumConfig),
 		new MiniCSSExtractPlugin({
 			filename: '[name].css'
 		})

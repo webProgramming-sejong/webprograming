@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.js"
+			integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			crossorigin="anonymous"
+		></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<script src="https://kit.fontawesome.com/980bde2d5b.js" crossorigin="anonymous"></script>
+
+		<title>Detail</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			const styleSheet = document.createElement('link');
+			styleSheet.href = './detail.css';
+			styleSheet.rel = 'stylesheet';
+			document.head.appendChild(styleSheet);
+		</script>
+		<div class="detail">
+			<!--Header-->
+			<div class="header">
+				<!--TextArea(Displays tag,title,author,time)-->
+				<div class="textArea">
+					<div class="titleWrap">
+						<span class="tag">museum</span>
+						<h1 class="title">The Louvre Museum(Musée du Louvre)</h1>
+						<div class="infoWrap">
+							<i class="fa-solid fa-user"></i>
+							<span class="author">Admin</span>
+							<span class="bar">|</span>
+							<span class="time">2022.04.18</span>
+						</div>
+					</div>
+				</div>
+				<!--ImageArea(Displays a representative image)-->
+				<div class="imgArea">
+					<!--Image cover for gradation effect on top of image-->
+					<div class="cover"></div>
+				</div>
+			</div>
+			<!--Content that includes relevant images, comments, recommendations buttons, and locations-->
+			<div class="contentWrap" id="scrollEvent">
+				<!--When scrolling down, the cover is covered over the header-->
+				<div class="headerCover" id="headerCover"></div>
+				<div class="postWrap">
+					<!--Wrap around the text of travel destinations-->
+					<div class="post" id="post">
+						<h1>The Louvre Museum</h1>
+						<img src="/assets/jpeg/img2.jpg" />
+						<p>
+							The Louvre Museum (French: Musée du Louvre) is a national museum located in Rivoli, the
+							heart of Paris, France. In terms of the number and quality of its collections, it is one of
+							the world's leading museums along with the Metropolitan Museum of Art and the British
+							Museum. The present building is a converted Louvre Palace and has been designated as a World
+							Heritage Site, including around the Seine River in Paris. The Louvre Pyramid, a glass
+							pyramid sculpture in front of the Louvre Museum, was built in modern times and was once
+							criticized as inappropriate. In French, it is also called Muset du Louvre, Grand Louvre, or
+							simply the Louvre.
+						</p>
+						<h1>Mona Lisa</h1>
+						<img src="/assets/jpeg/img1.jpg" />
+						<p>
+							The Louvre Museum is located inside the Louvre Palace. The construction of the Louvre Palace
+							began in the late 12th century on the order of King Philip II, and at that time it was not a
+							palace but a fortress. You can still see remnants of the fortress from that time. The
+							building was expanded several times before the fortress became the Louvre Palace. In 1672,
+							Louis XIV decided to reside at the Palace of Versailles and made the Louvre a place to
+							display the royal collection.
+						</p>
+						<img class="map" src="/assets/png/map.png" />
+					</div>
+					<!--Wrap around the recommend button-->
+					<div class="recommendWrap">
+						<div class="recommendBtn active">
+							<i class="fa-solid fa-heart icon"></i>
+							<span class="recommendNum">78</span>
+						</div>
+					</div>
+					<!--Wrap around the comments-->
+					<div class="commentWrap">
+						<h1 class="title">Comments</h1>
+						<form action="" class="submitForm">
+							<textarea name="comment" class="commentInput" placeholder="Enter comments"></textarea>
+							<input type="submit" value="Enter" class="commentSubmit" />
+						</form>
+						<div class="comments">
+							<div class="comment">
+								<div class="name">Yoon</div>
+								<div class="message">Hi, This is comment!</div>
+								<div class="time">2022.03.31. 22:36</div>
+							</div>
+							<div class="comment">
+								<div class="name">Hyoyeon</div>
+								<div class="message">Wow, that's great!</div>
+								<div class="time">2022.04.02. 11:36</div>
+							</div>
+						</div>
+					</div>
+					<!--Place where footer needs to be added-->
+				</div>
+			</div>
+		</div>
+		<script>
+			/* Code that creates the ability to cover headers by adjusting transparency as you scroll down */
+			let scrollE = window.document.getElementById('scrollEvent');
+			let coverE = window.document.getElementById('headerCover');
+			let postE = window.document.getElementById('post');
+			scrollE.addEventListener('scroll', (e) => {
+				if (window.innerHeight >= scrollE.scrollTop) {
+					coverE.style.opacity = scrollE.scrollTop / window.innerHeight;
+					postE.style.opacity = scrollE.scrollTop / window.innerHeight;
+				}
+			});
+		</script>
+	</body>
+</html>

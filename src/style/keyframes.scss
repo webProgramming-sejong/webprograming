@@ -154,88 +154,89 @@
 @keyframes fadeOut {
 	0% {
 		opacity: 1;
+		z-index: 1000;
 	}
 	90% {
+		z-index: 1000;
 		opacity: 0;
 	}
 	100% {
-		display: none;
+		z-index: -2;
 		opacity: 0;
 	}
 }
 
-@keyframes marquee1{
-	0%{
+@keyframes marquee1 {
+	0% {
 		transform: translateX(-105vw);
-	}100%{
+	}
+	100% {
 		transform: translateX(0vw);
 	}
 }
-@keyframes marquee2{
-	0%{
+@keyframes marquee2 {
+	0% {
 		transform: translateX(105vw);
-	}100%{
+	}
+	100% {
 		transform: translateX(0);
 	}
 }
-@keyframes marquee3{
-	0%{
+@keyframes marquee3 {
+	0% {
 		transform: translateX(-155vw);
-	}100%{
+	}
+	100% {
 		transform: translateX(-100vw);
 	}
 }
 
-
-@keyframes marquee-text{
-	0%{
+@keyframes marquee-text {
+	0% {
 		transform: translateX(-50%);
 	}
-	100%{
+	100% {
 		transform: translateX(0%);
 	}
 }
 
-
-@keyframes marquee-text-reverse{
-	0%{
+@keyframes marquee-text-reverse {
+	0% {
 		transform: translateX(0);
 	}
-	100%{
+	100% {
 		transform: translateX(-50%);
 	}
 }
 @keyframes pulse {
 	0% {
 		transform: scale(0.95);
-	
 	}
 
 	70% {
 		transform: scale(1);
-	
 	}
 
 	100% {
 		transform: scale(0.95);
 	}
 }
-@keyframes revealNav{
-	0%{
+@keyframes revealNav {
+	0% {
 		opacity: 0;
-		transform : translateY(-200px);
+		transform: translateY(-200px);
 	}
-	100%{
+	100% {
 		opacity: 1;
 		transform: translateY(calc(0px + 2rem));
 	}
 }
-@keyframes fadeIn{
-	0%{
+@keyframes fadeIn {
+	0% {
 		opacity: 0;
 		transform: translateX(-20px);
 	}
-	100%{
+	100% {
 		opacity: 1;
 		transform: translateX(0px);
 	}

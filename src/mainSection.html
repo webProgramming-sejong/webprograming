@@ -1,85 +1,100 @@
 <section class="main-section">
-    <!-- <div class="cover"></div> -->
-    <div class="background-water">
-    </div>
+	<div class="cover"></div>
+	<div class="background-water"></div>
 	<nav>
 		<ul>
-			<li class="navigation">
-                <div class="navContainer">
-                    <div class="mask mask-profile"></div>
-                    <i class="fa-solid fa-user"></i>
-                    <span>Profile</span></li>
-                </div>
-                
-			<li class="navigation">
-                <div class="navContainer">
-                    <div class="mask mask-fav "></div>
-                    <i class="fa-solid fa-right-from-bracket        fav"></i><span class='fav'>Fav</span></li>
-                </div>
-			<li class="navigation">
-                <div class="navContainer">
-                    <div class="mask mask-logout"></div>
-                    <i class="fa-solid fa-right-from-bracket"></i><span>Log out</span></li>
-                </div>
+			<a href="./login.html" target="_blank">
+				<li class="navigation">
+					<div class="navContainer">
+						<div class="mask mask-profile"></div>
+						<i class="fa-solid fa-user"></i>
+						<span>Sign In</span>
+					</div>
+				</li>
+			</a>
+			<a href="./signUp.html" target="_blank">
+				<li class="navigation">
+					<div class="navContainer">
+						<div class="mask mask-fav"></div>
+						<i class="fa-solid fa-user-plus fav"></i><span class="fav">Sign Up</span>
+					</div>
+				</li>
+			</a>
+			<a href="">
+				<li class="navigation">
+					<div class="navContainer">
+						<div class="mask mask-logout"></div>
+						<i class="fa-solid fa-right-from-bracket"></i><span>Blah</span>
+					</div>
+				</li>
+			</a>
 		</ul>
 	</nav>
 	<ul class="content-list">
-        <li class="content">
-              <div class="clipText">Museum</div>
-              <span class="content-name">Museum</span>
-             <div class="highlight">
-                 <div></div>
-                 <div></div>
-                 <div></div>
-             </div>
-
-        </li>
-        <li class="content">
-            <div class="clipText">Museum</div>
-            <span class="content-name">Museum</span>
-            <div class="highlight">
-                <div></div>
-                 <div></div>
-                 <div></div>
-            </div>
-        
-            
-            </li>
-        <li class="content">
-            <div class="clipText">Museum</div>
-            <span class="content-name">Museum</span>
-            <div class="highlight">
-                <div></div>
-                 <div></div>
-                 <div></div>
-            </div>
-          
-            </li>
-        <li class="content">
-            <div class="clipText">Museum</div>
-            <span class="content-name">Museum</span>
-            <div class="highlight">
-                <div></div>
-                 <div></div>
-                 <div></div>
-            </div>
-           
-            </li>
-        <li class="content">
-            <div class="clipText">Museum</div><span class="content-name">Museum</span>
-            <div class="highlight">
-                <div></div>
-                 <div></div>
-                 <div></div>
-            </div>
-          
-            </li>
-    </ul>
+		<a href="./museum.html" target="_blank">
+			<li class="content">
+				<div class="clipText">Museum</div>
+				<span class="content-name">Museum</span>
+				<div class="highlight">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</li>
+		</a>
+		<a href="./restaurant.html" target="_blank">
+			<li class="content">
+				<div class="clipText">Restaurant</div>
+				<span class="content-name">Restaurant</span>
+				<div class="highlight">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</li>
+		</a>
+		<a href="./hotel.html" target="_blank">
+			<li class="content">
+				<div class="clipText">Hotel</div>
+				<span class="content-name">Hotel</span>
+				<div class="highlight">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</li>
+		</a>
+		<li class="content">
+			<div class="clipText">Blah Blah</div>
+			<span class="content-name">Blah Blah</span>
+			<div class="highlight">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</li>
+		<li class="content">
+			<div class="clipText">Blah Blah</div>
+			<span class="content-name">Blah Blah</span>
+			<div class="highlight">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</li>
+	</ul>
 </section>
 <svg>
-    <filter id='turbulence' x='0' y='0' width='100%' height='100%'>
-        <feTurbulence id='water' numOctaves='3' seed='2' baseFrequency = '0.02 0.05'></feTurbulence>
-        <feDisplacementMap scale='20' in='SourceGraphic'></feDisplacementMap>
-        <animate xlink:href='#water' dur='60s' keyTimes='0;0.5;1' attributeName='baseFrequency' values='0.02 0.06; 0.04 0.08; 0.02 0.06' repeatCount='indefinite'></animate>
-    </filter>
+	<filter id="turbulence" x="0" y="0" width="100%" height="100%">
+		<feTurbulence id="water" numOctaves="3" seed="2" baseFrequency="0.02 0.05"></feTurbulence>
+		<feDisplacementMap scale="20" in="SourceGraphic"></feDisplacementMap>
+		<animate
+			xlink:href="#water"
+			dur="60s"
+			keyTimes="0;0.5;1"
+			attributeName="baseFrequency"
+			values="0.02 0.06; 0.04 0.08; 0.02 0.06"
+			repeatCount="indefinite"
+		></animate>
+	</filter>
 </svg>
