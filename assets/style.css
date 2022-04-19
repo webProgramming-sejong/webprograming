@@ -6,6 +6,7 @@
 body {
     margin:0;
 }
+/* Remove underline for a tag */
 a {
     text-decoration: none;
 }
@@ -134,6 +135,7 @@ a {
 .detail .contentWrap .postWrap .commentWrap {
     width: 100%;
 }
+/* commentWrap - submitForm */
 .detail .contentWrap .postWrap .commentWrap .submitForm {
     display: flex;
     width: 100%;
@@ -158,6 +160,7 @@ a {
     color: #fff;
     font-size: 16px;
 }
+/* commentWrap - comments */
 .detail .contentWrap .postWrap .commentWrap .comments {
     width: 100%;
 }
@@ -177,5 +180,15 @@ a {
 .detail .contentWrap .postWrap .commentWrap .comments .comment .time {
     font-size: 14px;
     color: rgb(159, 159, 159);
+}
+
+/* media query for responsive web design */
+@media(max-width: 767px) {
+    .detail .header {
+        flex-direction: column-reverse;
+    }
+    .detail .contentWrap .postWrap {
+        padding: 210px 10% 90px 10%;
+    }
 }
 
