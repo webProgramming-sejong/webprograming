@@ -3,11 +3,16 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- favicon -->
 		<link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico" />
+
+		<!-- pseudo state machine, it doesn't actually does any thing, but I can control when to execute scripts when I want by checking scriptState value-->
 		<script>
 			let scriptState = 1;
 		</script>
 
+		<!-- Google fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -21,15 +26,21 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
+		<!-- title of our page -->
 		<title>France pour tous</title>
 	</head>
 
 	<body>
+
+
+		<!-- this part is the background marquee, its just for user's immersive UX -->
+		<!-- it first has property of transformX(-100vw) , then will be back to transformX(0) when all the canvas element's animation finishes..  controled by animation-delay property-->
 		<div class="background-marquee">
 			<div class="mq">
 				<h1 class="mq-text mq-france">
 					FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE
-					FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE
+					FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANC
 					FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE
 					FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE
 					FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE FRANCE
@@ -53,7 +64,13 @@
 				</h1>
 			</div>
 		</div>
+
+		<!-- logo image  -->
 		<div class="logo_image"></div>
+
+		<!-- logo text -->
+		<!-- user will meet this element at first, so after this element's transformation finishes, other element will be visible -->
+		<!-- also another important of this animation is to earn some time for canvas element loaded -->
 		<svg width="100%" height="140" viewBox="0 0 600 150" style="z-index: 200" class="title">
 			<g>
 				<text class="svg-text svg-france" x="250" y="75" fill="#000000" font-size="60">France</text>
@@ -66,8 +83,17 @@
 			</g>
 		</svg>
 
+
+
+		<!-- this section element, is the main part of the landing page -->
+		<!-- which means that there will be user interaction held in this element, so just think this part is the main stage of page -->
 		<section class="landing">
+
+			<!-- canvas element , there will be lots of bristle particles rendered via webGl library , pixi.js -->
 			<canvas id="canvas"></canvas>
+
+			<!-- helper circle which induce user to click this circle. -->
+			<!-- if user clicks this circle, then scratch effect will be available, also helper path will be visible -->
 			<div class="abs helper_wrapper">
 				<svg width="55.526315921561604" height="47.21052643136636" class="abs helper_arrow">
 					<path
@@ -101,6 +127,9 @@
 				</svg>
 			</div>
 
+
+			<!-- helper path , induce user to destinated point, which is 5/6 point of main-section -->
+			<!-- if user moves cursor to destinated point, then all of elements it landing will be terminated, after 3000ms, mainSection.html will be injected via xmlHttpRequest -->
 			<svg width="628" height="325" class="abs helper_path">
 				<path d="m594.59846,0.00001" stroke="#000" stroke-width="3" />
 				<path

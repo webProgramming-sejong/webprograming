@@ -11,6 +11,6 @@ const removeCover = () => {
 };
 
 if (scriptState === 'mainSection') {
-	console.log('123123');
-	init();
+
+	// init();
 }

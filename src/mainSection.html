@@ -1,8 +1,17 @@
+
+<!-- its form is partial, cuz it will be injected to index.html -->
 <section class="main-section">
+
+	<!-- cover is to smoothly show main-section , like scene transition-->
 	<div class="cover"></div>
+
+	<!-- in this part, there will be water ripple effect held -->
 	<div class="background-water"></div>
+
+	<!-- navigation for main page -->
 	<nav>
 		<ul>
+			<!-- pass user to signin page -->
 			<a href="./login.html" target="_blank">
 				<li class="navigation">
 					<div class="navContainer">
@@ -12,6 +21,8 @@
 					</div>
 				</li>
 			</a>
+
+			<!-- pass user to signup page -->
 			<a href="./signUp.html" target="_blank">
 				<li class="navigation">
 					<div class="navContainer">
@@ -20,6 +31,8 @@
 					</div>
 				</li>
 			</a>
+
+			<!-- pass user to logout page , un dev -->
 			<a href="">
 				<li class="navigation">
 					<div class="navContainer">
@@ -30,11 +43,16 @@
 			</a>
 		</ul>
 	</nav>
+
+	<!-- list , that holds contents -->
 	<ul class="content-list">
+
+		<!-- pass user to museum page -->
 		<a href="./museum.html" target="_blank">
 			<li class="content">
 				<div class="clipText">Museum</div>
 				<span class="content-name">Museum</span>
+				<!-- below div is for highlight effect -->
 				<div class="highlight">
 					<div></div>
 					<div></div>
@@ -84,6 +102,9 @@
 		</li>
 	</ul>
 </section>
+
+<!-- svg filter definition, so to conclude, animate noise , displacement value -->
+<!-- this is why we use Webgl, because, this filter consumes a lots of resources... -->
 <svg>
 	<filter id="turbulence" x="0" y="0" width="100%" height="100%">
 		<feTurbulence id="water" numOctaves="3" seed="2" baseFrequency="0.02 0.05"></feTurbulence>

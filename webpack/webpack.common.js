@@ -5,66 +5,66 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
 const htmlConfig = {
-	// title: 'Just a Demo',
-	// filename: './index.html',
 	template: path.resolve(__dirname, '../src/index.html'),
-	minify: true
+	minify: true,
+	chunks : ['main']
 };
 
 const mainSectionConfig = {
 	filename: 'mainSection.html',
-	chunks: ['subpage'],
+	chunks: ['mainSection'],
 	template: path.resolve(__dirname, '../src/mainSection.html'),
-	minify: true
+	minify: true,
+	inject : 'head'
 };
 
 const loginConfig = {
 	filename: 'login.html',
-	chunks: ['subpage'],
+	chunks: ['login'],
 	template: path.resolve(__dirname, '../src/login.html'),
 	minify: true
 };
 const signUpConfig = {
 	filename: 'signUp.html',
-	chunks: ['subpage'],
+	chunks: ['signup'],
 	template: path.resolve(__dirname, '../src/signUp.html'),
 	minify: true
 };
 const hotelConfig = {
 	filename: 'hotel.html',
-	chunks: ['subpage'],
+	chunks: ['hotel'],
 	template: path.resolve(__dirname, '../src/hotel.html'),
 	minify: true
 };
 
 const restaurantConfig = {
 	filename: 'restaurant.html',
-	chunks: ['subpage'],
+	chunks: ['restaurant'],
 	template: path.resolve(__dirname, '../src/restaurant.html'),
 	minify: true
 };
 const detailConfig = {
 	filename: 'detail.html',
-	chunks: ['subpage'],
+	chunks: ['detail'],
 	template: path.resolve(__dirname, '../src/detail.html'),
 	minify: true
 };
 const museumConfig = {
 	filename: 'museum.html',
-	chunks: ['subpage'],
+	chunks: ['museum'],
 	template: path.resolve(__dirname, '../src/museum.html'),
 	minify: true
 };
 module.exports = {
 	entry: {
 		main: path.resolve(__dirname, '../src/index.js'),
-		section: path.resolve(__dirname, '../src/scripts/mainSection.js'),
-		login: path.resolve(__dirname, '../src/style/login.css'),
-		signup: path.resolve(__dirname, '../src/style/SignUpStyle.css'),
-		hotel: path.resolve(__dirname, '../src/style/hotel.css'),
-		restaurant: path.resolve(__dirname, '../src/style/restaurant.css'),
-		detail: path.resolve(__dirname, '../src/style/detail.css'),
-		museum: path.resolve(__dirname, '../src/style/museum.css')
+		mainSection: path.resolve(__dirname, '../src/scripts/mainSection.js'),
+		login: path.resolve(__dirname, '../src/scripts/login.js'),
+		signup: path.resolve(__dirname, '../src/scripts/signUp.js'),
+		hotel: path.resolve(__dirname, '../src/scripts/hotel.js'),
+		restaurant: path.resolve(__dirname, '../src/scripts/restaurant.js'),
+		detail: path.resolve(__dirname, '../src/scripts/detail.js'),
+		museum: path.resolve(__dirname, '../src/scripts/museum.js')
 	},
 	output: {
 		path: path.resolve(__dirname, '../dist'),
@@ -74,8 +74,10 @@ module.exports = {
 		publicPath: '/'
 	},
 	optimization: {
-		runtimeChunk: 'single'
-	},
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
 	plugins: [
 		new CopyWebpackPlugin({
 			patterns: [
