@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="js-commentForm">
+        <input type="text" placeholder="Add comment" />
+      </form>
+      <ul class="js-commentList"></ul>
+</body>
+<script>
+    const commentForm = document.querySelector(".js-commentForm");
+    const commentInput = commentForm.querySelector("input");
+    const commentList = document.querySelector(".js-commentList");
+    const commentS_Ls = "comments"; // commentS_Ls는 로컬스토리지에 commentList 변수명을 저장한 상수
+    let comments = []; // comments는 할일을 저장한 배열
+    function savecomments() {
+    localStorage.setItem(commentS_Ls, JSON.stringify(comments)); // localStorage에 리스트 저장
+    } 
+    function paintcomment(text) {
+    const li = document.createElement("li"); // li 태그 생성
+    const delBtn = document.createElement("button"); // button 태그 생성
+    const span = document.createElement("span"); // span 태그 생성
+    const newId = comments.length + 1; 
+    span.innerText = text; // span태그에 input창에 입력한 값 삽입
+    li.appendChild(span); // li의 자식에 span 연결
+    li.appendChild(delBtn); // li의 자식에 delBtn 연결
+    li.id = newId; 
+    commentList.appendChild(li); // commentList의 자식에 li 연결
+    const commentObj = {
+        text,
+        id: newId,
+    };
+    comments.push(commentObj); // comments에 commentList 삽입
+    savecomments(); // localStorage에 저장하는 함수
+    } 
+    function handleSubmit(event) {
+    event.preventDefault(); // 이벤트가 작동하지 못하게 함
+    const currentValue = commentInput.value; // currentValue에 input창에 입력한 값 대입
+    paintcomment(currentValue); // 리스트 추가하는 함수
+    commentInput.value = ""; // input창 초기화
+    } 
+    function loadcomments() {
+    const loadedcomments = localStorage.getItem(commentS_Ls);
+    // localStorage에 commentS_Ls가 있는지 확인
+    if (loadedcomments !== null) {
+        const parsedcomments = JSON.parse(loadedcomments); // loadedcomments를 json객체로 변경
+        parsedcomments.forEach(function (comment) { // 객체 내용 한개씩 파라미터로 넣어서 함수 실행
+        paintcomment(comment.text); // 리스트 추가하는 함수
+        });
+    }
+    } 
+    function init() {
+    loadcomments();
+    // commentForm에서 submit에 handleSubmit 이벤트를 연결
+    commentForm.addEventListener("submit", handleSubmit);
+    } 
+    init();
+</script>
+</html>
