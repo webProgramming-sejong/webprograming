@@ -206,3 +206,14 @@ body {
 	opacity: 0;
 	animation: untransparent 0.5s linear forwards;
 }
+
+
+.cover{
+	background-color: #242424;
+	transition: transform 2s cubic-bezier(.38,.72,.47,-0.92);
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	top : 100%;
+	z-index: 999;
+}

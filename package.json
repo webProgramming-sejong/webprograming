@@ -38,6 +38,7 @@
 		"portfinder-sync": "^0.0.2",
 		"sass": "^1.49.9",
 		"sass-loader": "^12.6.0",
+		"sha256": "^0.2.0",
 		"webpack-merge": "^5.8.0"
 	}
 }

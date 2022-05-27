@@ -89,38 +89,15 @@
 					<!--Wrap around the comments-->
 					<div class="commentWrap">
 						<h1 class="title">Comments</h1>
-						<form action="" class="submitForm">
+						<div class="submitForm">
 							<textarea name="comment" class="commentInput" placeholder="Enter comments"></textarea>
-							<input type="submit" value="Enter" class="commentSubmit" />
-						</form>
+							<button class="commentSubmit" >Submit</button>
+						</div>
 						<div class="comments">
-							<div class="comment">
-								<div class="name">Yoon</div>
-								<div class="message">Hi, This is comment!</div>
-								<div class="time">2022.03.31. 22:36</div>
-							</div>
-							<div class="comment">
-								<div class="name">Hyoyeon</div>
-								<div class="message">Wow, that's great!</div>
-								<div class="time">2022.04.02. 11:36</div>
-							</div>
 						</div>
 					</div>
-					<!--Place where footer needs to be added-->
 				</div>
 			</div>
 		</div>
-		<script>
-			/* Code that creates the ability to cover headers by adjusting transparency as you scroll down */
-			let scrollE = window.document.getElementById('scrollEvent');
-			let coverE = window.document.getElementById('headerCover');
-			let postE = window.document.getElementById('post');
-			scrollE.addEventListener('scroll', (e) => {
-				if (window.innerHeight >= scrollE.scrollTop) {
-					coverE.style.opacity = scrollE.scrollTop / window.innerHeight;
-					postE.style.opacity = scrollE.scrollTop / window.innerHeight;
-				}
-			});
-		</script>
 	</body>
 </html>

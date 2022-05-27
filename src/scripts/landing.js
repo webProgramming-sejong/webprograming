@@ -208,33 +208,13 @@ const init = () => {
 				dragging
 			) {
 				isHit = true;
-				const scripts = document.getElementsByTagName('script');
-
-				const xhr = new XMLHttpRequest();
 				document.body.children[3].removeChild(helperPath);
-
-				const newScript = document.createElement('script');
-				newScript.src = './mainSection.bundle.js';
-				xhr.onload = () => {
-					if (xhr.status === 200) {
-
-						// inject mainSection.html
-						document.body.innerHTML += xhr.responseText;
-
-						scriptState = 'mainSection';
-
-						// terminate un nessesary elements , add new script
-						reArrangeDomElement({
-							scriptToRemove: scripts[1],
-							scriptToAdd: newScript,
-							garbageElement: [document.body.children[2]]
-						});
-					} else {
-						console.warn('erroor');
-					}
-				};
-				xhr.open('get', './mainSection.html');
-				xhr.send();
+				const cover = document.querySelector('div.cover');
+				cover.style.transform = 'translateY(-100vh)';
+				setTimeout(() => {
+					window.location.href += 'mainSection.html'
+				},2500)
+				
 			}
 		}
 
