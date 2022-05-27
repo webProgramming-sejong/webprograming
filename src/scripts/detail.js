@@ -138,11 +138,14 @@ function loadComment() {
 				comment.appendChild(message);
 				comment.appendChild(time);
 				comment.id = comment1.id;
-				const delBtn = document.createElement('button'); //butto태그 생성
-				delBtn.innerText = 'Delete';
-				delBtn.addEventListener('click', deleteComment);
 
-				comment.appendChild(delBtn);
+				if (comment1.name === user) {
+					const delBtn = document.createElement('button'); //butto태그 생성
+					delBtn.innerText = 'Delete';
+					delBtn.addEventListener('click', deleteComment);
+					comment.appendChild(delBtn);
+				}
+
 				commentList.appendChild(comment);
 			}
 		});
